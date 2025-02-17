@@ -31,6 +31,7 @@ public class Hole : MonoBehaviour
 
     //private Variables
     private Dictionary<Direction, Hole> neighbourDict;
+    private int queueFill;
     
     //public Variables
     public Neighbours neighbours;
@@ -51,17 +52,28 @@ public class Hole : MonoBehaviour
         {
             Flow(inputDirection);
         }
+    }
+
+    private void LateUpdate()
+    {
+        fillLevel += queueFill;
+        queueFill = 0;
         fillRenderer.SetLevel(fillLevel);
     }
-    
+
 
     private void Flow(Direction direction)
     {
         if (fillLevel > 0 && has_neighbour(direction))
         {
             fillLevel -= 1;
-            get_neighbour(direction).fillLevel += 1;
+            get_neighbour(direction).Fill(1);
         }
+    }
+
+    public void Fill(int fillAmount)
+    {
+        queueFill += fillAmount;
     }
     
     private Direction get_input_direction()
