@@ -167,6 +167,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.east
+      value: 
+      objectReference: {fileID: 853507353}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.south
+      value: 
+      objectReference: {fileID: 915778403}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northEast
+      value: 
+      objectReference: {fileID: 827400529}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southEast
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southWest
+      value: 
+      objectReference: {fileID: 641199767}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (5)
@@ -501,6 +521,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.east
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northEast
+      value: 
+      objectReference: {fileID: 320903736}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southEast
+      value: 
+      objectReference: {fileID: 915778403}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (2)
@@ -574,6 +606,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.west
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.south
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southEast
+      value: 
+      objectReference: {fileID: 853507353}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southWest
+      value: 
+      objectReference: {fileID: 320903736}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (1)
@@ -647,6 +695,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.east
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.west
+      value: 
+      objectReference: {fileID: 320903736}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.south
+      value: 
+      objectReference: {fileID: 1026252304}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northWest
+      value: 
+      objectReference: {fileID: 827400529}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southEast
+      value: 
+      objectReference: {fileID: 1524529794}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southWest
+      value: 
+      objectReference: {fileID: 2137893845}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (8)
@@ -720,6 +792,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.east
+      value: 
+      objectReference: {fileID: 1026252304}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.north
+      value: 
+      objectReference: {fileID: 320903736}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northEast
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northWest
+      value: 
+      objectReference: {fileID: 641199767}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southEast
+      value: 
+      objectReference: {fileID: 1029866749}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (6)
@@ -793,6 +885,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.west
+      value: 
+      objectReference: {fileID: 915778403}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.north
+      value: 
+      objectReference: {fileID: 853507353}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northEast
+      value: 
+      objectReference: {fileID: 1524529794}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northWest
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southWest
+      value: 
+      objectReference: {fileID: 1029866749}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (7)
@@ -866,6 +978,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.north
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northEast
+      value: 
+      objectReference: {fileID: 1026252304}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northWest
+      value: 
+      objectReference: {fileID: 915778403}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (3)
@@ -939,6 +1063,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.west
+      value: 
+      objectReference: {fileID: 2137893845}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.northWest
+      value: 
+      objectReference: {fileID: 853507353}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: neighbours.southWest
+      value: 
+      objectReference: {fileID: 1026252304}
     - target: {fileID: 5317610651283848206, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_Name
       value: Hole (4)
@@ -957,6 +1093,17 @@ Transform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
   m_PrefabInstance: {fileID: 1524529792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ec081f9fc7d8e40b618c0b1d8c448f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2137893845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+  m_PrefabInstance: {fileID: 6722778896391287430}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1014,7 +1161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: fillLevel
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: neighbours.east
@@ -1083,6 +1230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scalePerLevel: 0
+  lerpFactor: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

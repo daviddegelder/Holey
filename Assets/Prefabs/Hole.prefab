@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f013714d532df554396a82d16e7f1142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalePerLevel: 0.2
+  scalePerLevel: 0.1
 --- !u!1 &144358252876115259
 GameObject:
   m_ObjectHideFlags: 0
