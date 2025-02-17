@@ -35,6 +35,9 @@ public class Hole : MonoBehaviour
     //public Variables
     public Neighbours neighbours;
     public int fillLevel = 0;
+    
+    //references
+    public FillRenderer fillRenderer;
 
     private void Start()
     {
@@ -48,6 +51,7 @@ public class Hole : MonoBehaviour
         {
             Flow(inputDirection);
         }
+        fillRenderer.SetLevel(fillLevel);
     }
     
 
