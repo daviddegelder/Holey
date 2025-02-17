@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class Hole : MonoBehaviour
         SouthWest,
         West,
         NorthWest,
+        Null,
     }
     [System.Serializable] public struct Neighbours
     {
@@ -36,12 +38,30 @@ public class Hole : MonoBehaviour
 
     private void Start()
     {
-        set_neighbours(neighbours);
+        //set_neighbours(neighbours);
+    }
     }
 
     private Hole get_neighbour(Direction direction)
     {
-        return neighbourDict[direction];
+        //return neighbourDict[direction];
+        return direction switch
+        {
+            Direction.North     => neighbours.north,
+            Direction.NorthEast => neighbours.northEast,
+            Direction.East      => neighbours.east,
+            Direction.SouthEast => neighbours.southEast,
+            Direction.South     => neighbours.south,
+            Direction.SouthWest => neighbours.southWest,
+            Direction.West      => neighbours.west,
+            Direction.NorthWest => neighbours.northWest,
+            _ => null
+        };
+    }
+
+    private bool has_neighbour(Direction direction)
+    {
+        return get_neighbour(direction) != null;
     }
 
     private void set_neighbours(Neighbours neighbourStruct)
