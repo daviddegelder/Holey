@@ -1013,6 +1013,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
+      propertyPath: fillLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266154030830203179, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: neighbours.east
       value: 
       objectReference: {fileID: 1524529794}

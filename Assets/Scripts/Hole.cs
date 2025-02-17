@@ -40,6 +40,41 @@ public class Hole : MonoBehaviour
     {
         //set_neighbours(neighbours);
     }
+
+    private void Update()
+    {
+        var inputDirection = get_input_direction();
+        if (inputDirection != Direction.Null)
+        {
+            Flow(inputDirection);
+        }
+    }
+    
+
+    private void Flow(Direction direction)
+    {
+        if (fillLevel > 0 && has_neighbour(direction))
+        {
+            fillLevel -= 1;
+            get_neighbour(direction).fillLevel += 1;
+        }
+    }
+    
+    private Direction get_input_direction()
+    {
+        Direction direction = Direction.Null;
+
+        if (Input.GetKeyDown(KeyCode.Keypad5)) { direction = Direction.Null; }
+        if (Input.GetKeyDown(KeyCode.Keypad8)) { direction = Direction.North; }
+        if (Input.GetKeyDown(KeyCode.Keypad6)) { direction = Direction.East; }
+        if (Input.GetKeyDown(KeyCode.Keypad2)) { direction = Direction.South; }
+        if (Input.GetKeyDown(KeyCode.Keypad4)) { direction = Direction.West; }
+        if (Input.GetKeyDown(KeyCode.Keypad9)) { direction = Direction.NorthEast; }
+        if (Input.GetKeyDown(KeyCode.Keypad3)) { direction = Direction.SouthEast; }
+        if (Input.GetKeyDown(KeyCode.Keypad1)) { direction = Direction.SouthWest; }
+        if (Input.GetKeyDown(KeyCode.Keypad7)) { direction = Direction.NorthWest; }
+
+        return direction;
     }
 
     private Hole get_neighbour(Direction direction)
