@@ -7,6 +7,7 @@ public class Hole : MonoBehaviour
     //enums and structs and stuff
     public enum Direction
     {
+        Null,
         North,
         NorthEast,
         East,
@@ -15,7 +16,6 @@ public class Hole : MonoBehaviour
         SouthWest,
         West,
         NorthWest,
-        Null,
     }
     [System.Serializable] public struct Neighbours
     {
@@ -39,10 +39,11 @@ public class Hole : MonoBehaviour
     
     //references
     public FillRenderer fillRenderer;
+    private DirectionInput input;
 
     private void Start()
     {
-        //set_neighbours(neighbours);
+        input = FindAnyObjectByType<DirectionInput>();
     }
 
     private void Update()
@@ -78,19 +79,7 @@ public class Hole : MonoBehaviour
     
     private Direction get_input_direction()
     {
-        Direction direction = Direction.Null;
-
-        if (Input.GetKeyDown(KeyCode.Keypad5)) { direction = Direction.Null; }
-        if (Input.GetKeyDown(KeyCode.Keypad8)) { direction = Direction.North; }
-        if (Input.GetKeyDown(KeyCode.Keypad6)) { direction = Direction.East; }
-        if (Input.GetKeyDown(KeyCode.Keypad2)) { direction = Direction.South; }
-        if (Input.GetKeyDown(KeyCode.Keypad4)) { direction = Direction.West; }
-        if (Input.GetKeyDown(KeyCode.Keypad9)) { direction = Direction.NorthEast; }
-        if (Input.GetKeyDown(KeyCode.Keypad3)) { direction = Direction.SouthEast; }
-        if (Input.GetKeyDown(KeyCode.Keypad1)) { direction = Direction.SouthWest; }
-        if (Input.GetKeyDown(KeyCode.Keypad7)) { direction = Direction.NorthWest; }
-
-        return direction;
+        return input.GetDirection();
     }
 
     private Hole get_neighbour(Direction direction)
