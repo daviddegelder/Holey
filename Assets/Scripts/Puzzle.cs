@@ -29,7 +29,7 @@ public class Puzzle : MonoBehaviour
 
         if (isComplete)
         {
-            animator.Play("Puzzle Complete");
+            animator.SetTrigger("Puzzle Complete");
         }
     }
 }
