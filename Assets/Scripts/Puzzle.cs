@@ -6,10 +6,10 @@ using UnityEngine;
 public class Puzzle : MonoBehaviour
 {
     private Hole[] holes;
-    private bool isComplete = false;
+    public bool isComplete = false;
     public Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         holes = GetComponentsInChildren<Hole>();
     }
@@ -30,6 +30,22 @@ public class Puzzle : MonoBehaviour
         if (isComplete)
         {
             animator.SetTrigger("Puzzle Complete");
+        }
+    }
+
+    private void OnDisable()
+    {
+        foreach (var hole in holes)
+        {
+            hole.enabled = false;
+        }
+    }
+    
+    private void OnEnable()
+    {
+        foreach (var hole in holes)
+        {
+            hole.enabled = true;
         }
     }
 }
