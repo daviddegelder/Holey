@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,13 +10,13 @@ public class FillRenderer : MonoBehaviour
     public Color backgroundFilledColor;
     
     private float scale;
+    private float targetScale;
     private Color backgroundTargetColor;
     
     
     public void SetLevel(int level)
     {
-        scale = Mathf.Lerp(scale, scalePerLevel * level, lerpFactor);
-        transform.localScale = Vector3.one * scale;
+        targetScale = scalePerLevel * level;
 
         if (level > 0)
         {
@@ -25,7 +26,14 @@ public class FillRenderer : MonoBehaviour
         {
             backgroundTargetColor = Color.white;
         }
-
-        background.color = Color.Lerp(background.color, backgroundTargetColor, lerpFactor);
     }
+
+    public void Update()
+    {
+        background.color = Color.Lerp(background.color, backgroundTargetColor, lerpFactor);
+        
+        scale = Mathf.Lerp(scale,targetScale , lerpFactor);
+        transform.localScale = Vector3.one * scale;
+    }
+    
 }

@@ -21,6 +21,7 @@ public class PuzzleManager : MonoBehaviour
     {
         if (currentPuzzle.isComplete)
         {
+            currentPuzzle.enabled = false;
             StartPuzzle(currentPuzzleIndex + 1);
         }
     }
