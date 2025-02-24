@@ -19,7 +19,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentPuzzle.isComplete)
+        if (currentPuzzle.isComplete && currentPuzzleIndex < puzzles.Length - 1)
         {
             currentPuzzle.enabled = false;
             StartPuzzle(currentPuzzleIndex + 1);

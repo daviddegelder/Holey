@@ -6,12 +6,20 @@ using UnityEngine;
 public class Puzzle : MonoBehaviour
 {
     private Hole[] holes;
-    public bool isComplete = false;
+    
+    public bool completable = true;
     public Animator animator;
+    
+    [HideInInspector]
+    public bool isComplete = false;
 
     private void Awake()
     {
         holes = GetComponentsInChildren<Hole>();
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     private void Update()
@@ -27,7 +35,7 @@ public class Puzzle : MonoBehaviour
             }
         }
 
-        if (isComplete)
+        if (isComplete && completable)
         {
             animator.SetTrigger("Puzzle Complete");
         }
