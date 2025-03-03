@@ -13,6 +13,7 @@ public class Puzzle : MonoBehaviour
     
     [HideInInspector]
     public bool current = false;
+    private DirectionInput input;
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class Puzzle : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
+        
+        input = FindAnyObjectByType<DirectionInput>();
     }
 
     private void Update()
@@ -33,7 +36,10 @@ public class Puzzle : MonoBehaviour
 
     public bool IsComplete()
     {
-        if (!completable) return Input.anyKeyDown;
+        if (!completable && input.GetDirection() != Hole.Direction.Null)
+        {
+            return true;
+        }
         
         return holes.All(hole => hole.fillLevel > 0);
     }
