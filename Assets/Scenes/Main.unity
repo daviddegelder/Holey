@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 260898488}
   - component: {fileID: 260898487}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MadeBy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.27}
+  m_AnchoredPosition: {x: -0.1, y: -1.27}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &260898487
@@ -1809,7 +1809,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1473580189}
+    m_TransformParent: {fileID: 1509489024}
     m_Modifications:
     - target: {fileID: 2212580129257478581, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_LocalScale.x
@@ -1825,11 +1825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2212580129257478581, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8910079
+      value: -0.89100784
       objectReference: {fileID: 0}
     - target: {fileID: 2212580129257478581, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41497353
+      value: 0.15497357
       objectReference: {fileID: 0}
     - target: {fileID: 2212580129257478581, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3784,7 +3784,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1509489024}
-  - {fileID: 1586532968}
   - {fileID: 260898486}
   - {fileID: 1539000204}
   m_Father: {fileID: 1300071783}
@@ -3869,7 +3868,7 @@ GameObject:
   - component: {fileID: 1509489026}
   - component: {fileID: 1509489025}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3886,7 +3885,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1586532968}
   m_Father: {fileID: 1473580189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4008,7 +4008,7 @@ GameObject:
   - component: {fileID: 1539000206}
   - component: {fileID: 1539000205}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
