@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -29,9 +31,20 @@ public class PuzzleManager : MonoBehaviour
 
     private void StartPuzzle(int index)
     {
-        currentPuzzleIndex = index % puzzles.Length;
+        if (index >= puzzles.Length)
+        {
+            End();
+            return;
+        }
+        currentPuzzleIndex = index;
         currentPuzzle = puzzles[currentPuzzleIndex];
         currentPuzzle.SetCurrent(true);
         currentPuzzle.animator.SetTrigger("Puzzle Enter");
+    }
+
+    private void End()
+    {
+        var scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
 }

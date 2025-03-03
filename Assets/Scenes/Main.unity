@@ -1286,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 5120036471322275831, guid: 43cc7606ece29114680a88f1010c2753, type: 2}
     - target: {fileID: 7300267645873408131, guid: 4de18b78a70887a4a9d9c2c577b5eb3e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 7300267645873408131, guid: 4de18b78a70887a4a9d9c2c577b5eb3e, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -3446,7 +3446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completable: 0
   animator: {fileID: 1300071785}
-  current: 0
 --- !u!95 &1300071785
 Animator:
   serializedVersion: 7
@@ -4764,7 +4763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completable: 0
   animator: {fileID: 1798189792}
-  current: 0
 --- !u!4 &2067346974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2212580129257478581, guid: c69a765398d273d4b943ee5efdf9bd58, type: 3}

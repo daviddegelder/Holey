@@ -11,8 +11,8 @@ public class Puzzle : MonoBehaviour
     public bool completable = true;
     public Animator animator;
     
-    [HideInInspector]
-    public bool current = false;
+    private bool current = false;
+    private bool active = false;
     private DirectionInput input;
 
     private void Awake()
@@ -37,11 +37,13 @@ public class Puzzle : MonoBehaviour
 
     public bool IsComplete()
     {
-        if (!completable && input.GetDirection() != Hole.Direction.Null)
-        {
+        if (!active) return false;
+        
+        if (!completable && input.GetDirection() != Hole.Direction.Null){
             return true;
         }
         
+        if (holes.Length == 0) return false;
         return holes.All(hole => hole.fillLevel > 0);
     }
 
@@ -51,8 +53,9 @@ public class Puzzle : MonoBehaviour
     }
 
     
-    private void SetActive(bool active)
+    private void SetActive(bool value)
     {
+        active = value;
         foreach (var hole in holes)
         {
             hole.enabled = active;
