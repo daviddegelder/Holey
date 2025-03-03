@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class Puzzle : MonoBehaviour
     public Animator animator;
     
     [HideInInspector]
-    public bool isComplete = false;
+    public bool current = false;
 
     private void Awake()
     {
@@ -24,36 +25,30 @@ public class Puzzle : MonoBehaviour
 
     private void Update()
     {
-        isComplete = true;
-        
-        foreach (var hole in holes)
-        {
-            if (hole.fillLevel == 0)
-            {
-                isComplete = false;
-                break;
-            }
-        }
-
-        if (isComplete && completable)
+        if (IsComplete())
         {
             animator.SetTrigger("Puzzle Complete");
         }
     }
 
-    private void OnDisable()
+    public bool IsComplete()
     {
-        foreach (var hole in holes)
-        {
-            hole.enabled = false;
-        }
+        if (!completable) return Input.anyKeyDown;
+        
+        return holes.All(hole => hole.fillLevel > 0);
     }
-    
-    private void OnEnable()
+
+    public void SetCurrent(bool value)
+    {
+        current = value;
+        SetActive(current);
+    }
+
+    public void SetActive(bool active)
     {
         foreach (var hole in holes)
         {
-            hole.enabled = true;
+            hole.enabled = active;
         }
     }
 }

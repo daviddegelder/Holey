@@ -5,32 +5,32 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     public Puzzle[] puzzles;
-    private int currentPuzzleIndex = 0;
-    private Puzzle currentPuzzle;
+    public int currentPuzzleIndex = 0;
+    public Puzzle currentPuzzle;
 
     private void Start()
     {
         foreach (var puzzle in puzzles)
         {
-            puzzle.enabled = false;
+            puzzle.SetCurrent(false);
         }
         StartPuzzle(0);
     }
 
     private void Update()
     {
-        if (currentPuzzle.isComplete && currentPuzzleIndex < puzzles.Length - 1)
+        if (currentPuzzle.IsComplete())
         {
-            currentPuzzle.enabled = false;
+            currentPuzzle.SetCurrent(false);
             StartPuzzle(currentPuzzleIndex + 1);
         }
     }
 
     private void StartPuzzle(int index)
     {
-        currentPuzzleIndex = index;
+        currentPuzzleIndex = index % puzzles.Length;
         currentPuzzle = puzzles[currentPuzzleIndex];
-        currentPuzzle.enabled = true;
+        currentPuzzle.SetCurrent(true);
         currentPuzzle.animator.SetTrigger("Puzzle Enter");
     }
 }
