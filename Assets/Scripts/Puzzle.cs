@@ -24,6 +24,7 @@ public class Puzzle : MonoBehaviour
         }
         
         input = FindAnyObjectByType<DirectionInput>();
+        
     }
 
     private void Update()
@@ -47,14 +48,24 @@ public class Puzzle : MonoBehaviour
     public void SetCurrent(bool value)
     {
         current = value;
-        SetActive(current);
     }
 
-    public void SetActive(bool active)
+    
+    private void SetActive(bool active)
     {
         foreach (var hole in holes)
         {
             hole.enabled = active;
         }
+    }
+
+    // wrapper methods because animation events don't allow bool parameters.
+    public void Activate()
+    {
+        SetActive(true);
+    }
+    public void Deactivate()
+    {
+        SetActive(false);
     }
 }

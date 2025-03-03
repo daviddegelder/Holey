@@ -13,6 +13,7 @@ public class PuzzleManager : MonoBehaviour
         foreach (var puzzle in puzzles)
         {
             puzzle.SetCurrent(false);
+            puzzle.Deactivate();
         }
         StartPuzzle(0);
     }

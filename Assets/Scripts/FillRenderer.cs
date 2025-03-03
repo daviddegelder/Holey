@@ -11,9 +11,13 @@ public class FillRenderer : MonoBehaviour
     
     private float scale;
     private float targetScale;
-    private Color backgroundTargetColor;
-    
-    
+    private Color backgroundTargetColor = Color.white;
+
+    private void Start()
+    {
+        background.color = Color.white;
+    }
+
     public void SetLevel(int level)
     {
         targetScale = scalePerLevel * level;
