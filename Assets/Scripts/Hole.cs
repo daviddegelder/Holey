@@ -39,6 +39,7 @@ public class Hole : MonoBehaviour
     
     //references
     public FillRenderer fillRenderer;
+    public AudioSource audio;
     private DirectionInput input;
 
     private void Start()
@@ -69,6 +70,7 @@ public class Hole : MonoBehaviour
         {
             fillLevel -= 1;
             get_neighbour(direction).Fill(1);
+            audio.Play();
         }
     }
 
