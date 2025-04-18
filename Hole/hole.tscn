@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkaj5fl2k43vq"]
+[gd_scene load_steps=4 format=3 uid="uid://bkaj5fl2k43vq"]
 
 [ext_resource type="Script" uid="uid://dorko01b0mjo1" path="res://Hole/hole.gd" id="1_y0jvi"]
 [ext_resource type="Texture2D" uid="uid://bvtqcc0mbkwg1" path="res://Sprites/circle_256.png" id="2_q25xr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0jvi"]
+radius = 16.0
 
 [node name="Hole" type="Node2D"]
 script = ExtResource("1_y0jvi")
@@ -9,7 +12,7 @@ script = ExtResource("1_y0jvi")
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="Background"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")
 
 [node name="Fill" type="Node2D" parent="."]
@@ -17,6 +20,21 @@ unique_name_in_owner = true
 scale = Vector2(0.9, 0.9)
 
 [node name="Sprite" type="Sprite2D" parent="Fill"]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(0.2, 0.2)
+modulate = Color(1, 0.745098, 0.2, 1)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")
+
+[node name="AutoDetect" type="Area2D" parent="." groups=["Hole"]]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoDetect"]
+shape = SubResource("CircleShape2D_y0jvi")
+
+[node name="RayCast2D" type="RayCast2D" parent="AutoDetect"]
+unique_name_in_owner = true
+enabled = false
+target_position = Vector2(32, 0)
+collide_with_areas = true
+collide_with_bodies = false
