@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkaj5fl2k43vq"]
+
+[ext_resource type="Script" uid="uid://dorko01b0mjo1" path="res://Hole/hole.gd" id="1_y0jvi"]
+[ext_resource type="Texture2D" uid="uid://bvtqcc0mbkwg1" path="res://Sprites/circle_256.png" id="2_q25xr"]
+
+[node name="Hole" type="Node2D"]
+script = ExtResource("1_y0jvi")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Background"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q25xr")
+
+[node name="Fill" type="Node2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.9, 0.9)
+
+[node name="Sprite" type="Sprite2D" parent="Fill"]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q25xr")

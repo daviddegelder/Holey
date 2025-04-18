@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjp6mawfku0p"]
+
+[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(256, 192)
+neighbours = {
+3: NodePath("../Hole2")
+}
+
+[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(320, 192)
+neighbours = {
+3: NodePath("../Hole3"),
+7: NodePath("../Hole")
+}
+fill_level = 1
+
+[node name="Hole3" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(384, 192)
+neighbours = {
+7: NodePath("../Hole2")
+}
