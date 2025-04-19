@@ -4,8 +4,21 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="Puzzle" type="Node2D" parent="."]
 position = Vector2(352, 160)
+
+[node name="Hole" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
 neighbours = {
 0: null,
 1: null,
@@ -18,8 +31,8 @@ neighbours = {
 8: NodePath("../Hole5")
 }
 
-[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(320, 192)
+[node name="Hole2" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-32, 32)
 neighbours = {
 0: null,
 1: NodePath("../Hole5"),
@@ -28,13 +41,13 @@ neighbours = {
 4: NodePath("../Hole7"),
 5: NodePath("../Hole9"),
 6: NodePath("../Hole8"),
-7: null,
+7: NodePath("../Hole6"),
 8: NodePath("../Hole4")
 }
-fill_level = 9
+fill_level = 5
 
-[node name="Hole4" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(288, 160)
+[node name="Hole4" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-64, 0)
 neighbours = {
 0: null,
 1: null,
@@ -42,13 +55,13 @@ neighbours = {
 3: NodePath("../Hole"),
 4: NodePath("../Hole2"),
 5: NodePath("../Hole8"),
-6: null,
+6: NodePath("../Hole6"),
 7: null,
-8: NodePath("../Hole6")
+8: null
 }
 
-[node name="Hole5" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(320, 128)
+[node name="Hole5" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-32, -32)
 neighbours = {
 0: null,
 1: null,
@@ -57,26 +70,26 @@ neighbours = {
 4: NodePath("../Hole"),
 5: NodePath("../Hole2"),
 6: NodePath("../Hole4"),
-7: NodePath("../Hole6"),
+7: null,
 8: null
 }
 
-[node name="Hole6" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(256, 128)
+[node name="Hole6" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-96, 32)
 neighbours = {
 0: null,
 1: null,
-2: null,
-3: NodePath("../Hole5"),
-4: NodePath("../Hole4"),
-5: null,
+2: NodePath("../Hole4"),
+3: NodePath("../Hole2"),
+4: NodePath("../Hole8"),
+5: NodePath("../Hole3"),
 6: null,
 7: null,
 8: null
 }
 
-[node name="Hole7" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(352, 224)
+[node name="Hole7" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 64)
 neighbours = {
 0: null,
 1: NodePath("../Hole"),
@@ -89,8 +102,8 @@ neighbours = {
 8: NodePath("../Hole2")
 }
 
-[node name="Hole8" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(288, 224)
+[node name="Hole8" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-64, 64)
 neighbours = {
 0: null,
 1: NodePath("../Hole4"),
@@ -100,11 +113,12 @@ neighbours = {
 5: null,
 6: NodePath("../Hole3"),
 7: null,
-8: null
+8: NodePath("../Hole6")
 }
+fill_level = 4
 
-[node name="Hole9" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(320, 256)
+[node name="Hole9" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-32, 96)
 neighbours = {
 0: null,
 1: NodePath("../Hole2"),
@@ -117,11 +131,11 @@ neighbours = {
 8: NodePath("../Hole8")
 }
 
-[node name="Hole3" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
-position = Vector2(256, 256)
+[node name="Hole3" parent="Puzzle" node_paths=PackedStringArray("neighbours") instance=ExtResource("1_ig7tw")]
+position = Vector2(-96, 96)
 neighbours = {
 0: null,
-1: null,
+1: NodePath("../Hole6"),
 2: NodePath("../Hole8"),
 3: NodePath("../Hole9"),
 4: null,

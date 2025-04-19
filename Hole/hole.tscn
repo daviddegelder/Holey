@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkaj5fl2k43vq"]
+[gd_scene load_steps=5 format=3 uid="uid://bkaj5fl2k43vq"]
 
 [ext_resource type="Script" uid="uid://dorko01b0mjo1" path="res://Hole/hole.gd" id="1_y0jvi"]
 [ext_resource type="Texture2D" uid="uid://bvtqcc0mbkwg1" path="res://Sprites/circle_256.png" id="2_q25xr"]
+[ext_resource type="Script" uid="uid://c47ipo3nyyk7" path="res://Hole/render.gd" id="2_wbotu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0jvi"]
 radius = 16.0
@@ -9,17 +10,29 @@ radius = 16.0
 [node name="Hole" type="Node2D"]
 script = ExtResource("1_y0jvi")
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Render" type="Node2D" parent="."]
+unique_name_in_owner = true
+process_priority = -1
+script = ExtResource("2_wbotu")
+lerp_weight = 0.2
+min_scale = 0.2
+max_scale = 0.9
+fill_steps = 9
+bg_default_color = Color(1, 1, 1, 1)
+bg_complete_color = Color(1, 0.92498, 0.796529, 1)
 
-[node name="Sprite" type="Sprite2D" parent="Background"]
+[node name="Background" type="Node2D" parent="Render"]
+unique_name_in_owner = true
+
+[node name="Sprite" type="Sprite2D" parent="Render/Background"]
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")
 
-[node name="Fill" type="Node2D" parent="."]
+[node name="Fill" type="Node2D" parent="Render"]
 unique_name_in_owner = true
-scale = Vector2(0.9, 0.9)
+scale = Vector2(1e-05, 1e-05)
 
-[node name="Sprite" type="Sprite2D" parent="Fill"]
+[node name="Sprite" type="Sprite2D" parent="Render/Fill"]
 modulate = Color(1, 0.745098, 0.2, 1)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")

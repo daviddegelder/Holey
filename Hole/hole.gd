@@ -2,6 +2,7 @@
 class_name Hole
 extends Node2D
 
+
 enum Direction {
 	Null,
 	North,
@@ -13,7 +14,7 @@ enum Direction {
 	West,
 	NorthWest,
 }
-var DIRECTION_VECTORS: Dictionary[Direction, Vector2] = {
+const DIRECTION_VECTORS: Dictionary[Direction, Vector2] = {
 	Direction.Null      : Vector2(0,0),
 	Direction.North     : Vector2(0,-1),
 	Direction.NorthEast : Vector2(1,-1),
@@ -25,18 +26,19 @@ var DIRECTION_VECTORS: Dictionary[Direction, Vector2] = {
 	Direction.NorthWest : Vector2(-1,-1),
 }
 
+
 @export_tool_button("Detect Neighbours") var detect_neighbours_action = detect_neighbours;
 @export var neighbours: Dictionary[Direction, Hole]
 @export var fill_level: int
-
-var queue_fill: int = 0
 
 func _process(_delta):
 	if not Engine.is_editor_hint():
 		var input_direction: Direction = get_input_direction()
 		if input_direction != Direction.Null:
 			flow(input_direction)
-	render_fill()
+		%Render.fill_level = fill_level
+	else:
+		render_editor()
 	
 func flow(direction: Direction):
 	if fill_level > 0 and has_neighbour(direction):
@@ -46,25 +48,22 @@ func flow(direction: Direction):
 func fill():
 	fill_level += 1
 
-func render_fill():
-	%Fill.scale = Vector2.ONE * (fill_level * 0.1)
-
 func get_input_direction():
-	if Input.is_action_just_released("North"):
+	if Input.is_action_just_pressed("North"):
 		return Direction.North
-	if Input.is_action_just_released("NorthEast"):
+	if Input.is_action_just_pressed("NorthEast"):
 		return Direction.NorthEast
-	if Input.is_action_just_released("East"):
+	if Input.is_action_just_pressed("East"):
 		return Direction.East
-	if Input.is_action_just_released("SouthEast"):
+	if Input.is_action_just_pressed("SouthEast"):
 		return Direction.SouthEast
-	if Input.is_action_just_released("South"):
+	if Input.is_action_just_pressed("South"):
 		return Direction.South
-	if Input.is_action_just_released("SouthWest"):
+	if Input.is_action_just_pressed("SouthWest"):
 		return Direction.SouthWest
-	if Input.is_action_just_released("West"):
+	if Input.is_action_just_pressed("West"):
 		return Direction.West
-	if Input.is_action_just_released("NorthWest"):
+	if Input.is_action_just_pressed("NorthWest"):
 		return Direction.NorthWest
 	#no input:
 	return Direction.Null
@@ -83,3 +82,6 @@ func detect_neighbour_in_direction(direction: Direction) -> Hole:
 	if collider == null or !collider.is_in_group("Hole"):
 		return null
 	return collider.get_parent()
+
+func render_editor():
+	%Fill.scale = Vector2.ONE * (fill_level * 0.1)
