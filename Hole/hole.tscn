@@ -7,8 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0jvi"]
 radius = 16.0
 
-[node name="Hole" type="Node2D"]
+[node name="Hole" type="Node2D" node_paths=PackedStringArray("neighbours")]
 script = ExtResource("1_y0jvi")
+neighbours = {}
 
 [node name="Render" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -39,6 +40,8 @@ texture = ExtResource("2_q25xr")
 
 [node name="AutoDetect" type="Area2D" parent="." groups=["Hole"]]
 visible = false
+collision_layer = 2
+collision_mask = 2
 monitoring = false
 monitorable = false
 
@@ -49,5 +52,6 @@ shape = SubResource("CircleShape2D_y0jvi")
 unique_name_in_owner = true
 enabled = false
 target_position = Vector2(32, 0)
+collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false

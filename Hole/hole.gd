@@ -85,3 +85,6 @@ func detect_neighbour_in_direction(direction: Direction) -> Hole:
 
 func render_editor():
 	%Fill.scale = Vector2.ONE * (fill_level * 0.1)
+
+func is_complete() -> bool:
+	return fill_level > 0
