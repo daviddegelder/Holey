@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_hgotr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(224, 192)
+size = Vector2(192, 183)
 
 [node name="Puzzle" type="Area2D" node_paths=PackedStringArray("holes")]
 script = ExtResource("1_77j1r")
@@ -137,6 +137,6 @@ neighbours = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 0)
+visible = false
 shape = SubResource("RectangleShape2D_0xm2m")
 disabled = true

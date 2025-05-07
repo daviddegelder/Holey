@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://6kyh0plkcy8e"]
+[gd_scene load_steps=5 format=3 uid="uid://6kyh0plkcy8e"]
 
-[ext_resource type="PackedScene" uid="uid://ckjp6mawfku0p" path="res://main.tscn" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://khxwi3tw7vr7" path="res://RectScale2D.gd" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://chig2yx62tk41" path="res://PuzzleContainer.gd" id="1_m6e0p"]
+[ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://puzzle.tscn" id="3_27fn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27fn8"]
+size = Vector2(179.202, 188.907)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,18 +35,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="PuzzleContainer" type="Container" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-stretch = true
+script = ExtResource("1_m6e0p")
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(432, 360)
-render_target_update_mode = 4
+[node name="RectScale2D" type="CollisionShape2D" parent="HBoxContainer/PuzzleContainer" node_paths=PackedStringArray("container")]
+position = Vector2(216, 180)
+scale = Vector2(1.9057, 1.9057)
+shape = SubResource("RectangleShape2D_27fn8")
+disabled = true
+script = ExtResource("1_fyqef")
+container = NodePath("..")
+metadata/_custom_type_script = "uid://khxwi3tw7vr7"
 
-[node name="Main" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_fyqef")]
+[node name="Puzzle" parent="HBoxContainer/PuzzleContainer/RectScale2D" instance=ExtResource("3_27fn8")]
 
 [node name="Right" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
