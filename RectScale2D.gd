@@ -26,6 +26,7 @@ func update():
 	var y_scale = container.size.y / bounds.size.y
 	scale = Vector2.ONE * min(x_scale, y_scale)
 	position = container.size / 2
+
 	
 func _get_configuration_warnings():
 	if shape is not RectangleShape2D:
