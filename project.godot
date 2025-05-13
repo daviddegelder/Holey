@@ -13,12 +13,15 @@ config_version=5
 config/name="Holey-Godot"
 run/main_scene="uid://6kyh0plkcy8e"
 config/features=PackedStringArray("4.4")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.85098, 0.858824, 0.905882, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://cepwlqrbt5g4t"
+config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
-GlobalInput="*res://input.gd"
+Global="*res://Systems/global.gd"
+GlobalInput="*res://Systems/input.gd"
 
 [display]
 
@@ -79,3 +82,4 @@ NorthWest={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.85098, 0.858824, 0.905882, 1)
