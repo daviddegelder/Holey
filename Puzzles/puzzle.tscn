@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_77j1r"]
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_hgotr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(192, 183)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pdel"]
+size = Vector2(192, 192)
 
-[node name="Puzzle" type="Area2D" node_paths=PackedStringArray("holes")]
+[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
+shape = SubResource("RectangleShape2D_6pdel")
+disabled = true
 script = ExtResource("1_77j1r")
-holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8"), NodePath("Hole9"), NodePath("Hole3")]
+holes = [NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole8"), NodePath("Hole9"), NodePath("Hole3")]
 
 [node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
 position = Vector2(-64, 0)
@@ -31,7 +33,7 @@ neighbours = {
 1: null,
 2: null,
 3: null,
-4: NodePath("../Hole7"),
+4: null,
 5: NodePath("../Hole9"),
 6: NodePath("../Hole8"),
 7: NodePath("../Hole6"),
@@ -75,7 +77,7 @@ neighbours = {
 3: NodePath("../Hole2"),
 4: NodePath("../Hole8"),
 5: NodePath("../Hole3"),
-6: NodePath("../Hole"),
+6: null,
 7: null,
 8: null
 }
@@ -99,20 +101,21 @@ neighbours = {
 0: null,
 1: NodePath("../Hole4"),
 2: NodePath("../Hole2"),
-3: NodePath("../Hole7"),
+3: null,
 4: NodePath("../Hole9"),
 5: NodePath("../Hole5"),
 6: NodePath("../Hole3"),
-7: NodePath("../Hole"),
+7: null,
 8: NodePath("../Hole6")
 }
+fill_level = 9
 
 [node name="Hole9" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
 position = Vector2(32, 32)
 neighbours = {
 0: null,
 1: NodePath("../Hole2"),
-2: NodePath("../Hole7"),
+2: null,
 3: null,
 4: null,
 5: null,
@@ -132,10 +135,5 @@ neighbours = {
 5: null,
 6: null,
 7: null,
-8: NodePath("../Hole")
+8: null
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_0xm2m")
-disabled = true

@@ -20,8 +20,8 @@ config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-Global="*res://Systems/global.gd"
 GlobalInput="*res://Systems/input.gd"
+Global="*res://Systems/global.gd"
 
 [display]
 

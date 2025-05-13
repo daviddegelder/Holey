@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://brdnb6jobe0hs"]
+
+[ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_d4d0e"]
+[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_qj7yy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4d0e"]
+size = Vector2(128, 128)
+
+[node name="Puzzle" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_d4d0e")
+disabled = true
+script = ExtResource("1_d4d0e")
+
+[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+position = Vector2(32, 0)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: NodePath("../Hole8"),
+7: NodePath("../Hole6"),
+8: NodePath("../Hole4")
+}
+
+[node name="Hole4" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+position = Vector2(0, -32)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hole2"),
+5: NodePath("../Hole8"),
+6: NodePath("../Hole6"),
+7: null,
+8: null
+}
+
+[node name="Hole6" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+position = Vector2(-32, 0)
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Hole4"),
+3: NodePath("../Hole2"),
+4: NodePath("../Hole8"),
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[node name="Hole8" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+position = Vector2(0, 32)
+neighbours = {
+0: null,
+1: NodePath("../Hole4"),
+2: NodePath("../Hole2"),
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../Hole6")
+}
+fill_level = 4

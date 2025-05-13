@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bliwjwedy5d7l"]
+
+[ext_resource type="Script" uid="uid://dorko01b0mjo1" path="res://Hole/hole.gd" id="1_di0nq"]
+
+[node name="PuzzleSelector" type="Node2D"]
+script = ExtResource("1_di0nq")
+metadata/_custom_type_script = "uid://dorko01b0mjo1"

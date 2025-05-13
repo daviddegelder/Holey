@@ -1,5 +1,5 @@
 @tool
-extends Area2D
+class_name Puzzle extends CollisionShape2D
 
 @export_tool_button("Update") var update_action = update
 @export var holes: Array[Hole]

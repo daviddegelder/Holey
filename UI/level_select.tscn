@@ -1,40 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://crpaljc720oiq"]
+[gd_scene load_steps=3 format=3 uid="uid://crpaljc720oiq"]
 
-[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="1_r4dbv"]
+[ext_resource type="Script" uid="uid://bfigo67a7avoe" path="res://UI/level_select.gd" id="1_qgm14"]
+[ext_resource type="PackedScene" uid="uid://bkeyjb10v8bch" path="res://UI/level_selector.tscn" id="2_qgm14"]
 
-[node name="LevelSelect" type="Node2D"]
+[node name="LevelSelect" type="Node2D" node_paths=PackedStringArray("levels")]
+script = ExtResource("1_qgm14")
+levels = [NodePath("LevelSelector"), NodePath("LevelSelector2"), NodePath("LevelSelector3"), NodePath("LevelSelector4"), NodePath("LevelSelector5")]
 
-[node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_r4dbv")]
-position = Vector2(320, 192)
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: NodePath("../Hole3"),
-4: null,
-5: null,
-6: null,
-7: NodePath("../Hole2"),
-8: null
-}
-
-[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_r4dbv")]
+[node name="LevelSelector" parent="." instance=ExtResource("2_qgm14")]
 position = Vector2(256, 192)
+
+[node name="Hole" parent="LevelSelector" index="0" node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
 2: null,
-3: NodePath("../Hole"),
+3: NodePath("../../LevelSelector2/Hole"),
 4: null,
 5: null,
 6: null,
 7: null,
 8: null
 }
-fill_level = 1
 
-[node name="Hole3" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("1_r4dbv")]
+[node name="LevelSelector2" parent="." instance=ExtResource("2_qgm14")]
+position = Vector2(320, 192)
+
+[node name="Hole" parent="LevelSelector2" index="0" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../../LevelSelector3/Hole"),
+4: null,
+5: null,
+6: null,
+7: NodePath("../../LevelSelector/Hole"),
+8: null
+}
+fill_level = 0
+
+[node name="Title" parent="LevelSelector2" index="1"]
+text = "Level 2
+"
+
+[node name="LevelSelector3" parent="." instance=ExtResource("2_qgm14")]
 position = Vector2(384, 192)
+
+[node name="Hole" parent="LevelSelector3" index="0" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../../LevelSelector4/Hole"),
+4: NodePath("../../LevelSelector5/Hole"),
+5: null,
+6: null,
+7: NodePath("../../LevelSelector2/Hole"),
+8: null
+}
+fill_level = 0
+
+[node name="Title" parent="LevelSelector3" index="1"]
+text = "Level 3"
+
+[node name="LevelSelector4" parent="." instance=ExtResource("2_qgm14")]
+position = Vector2(448, 192)
+
+[node name="Hole" parent="LevelSelector4" index="0" node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -42,7 +75,53 @@ neighbours = {
 3: null,
 4: null,
 5: null,
-6: null,
-7: NodePath("../Hole"),
+6: NodePath("../../LevelSelector5/Hole"),
+7: NodePath("../../LevelSelector3/Hole"),
 8: null
 }
+fill_level = 0
+
+[node name="Title" parent="LevelSelector4" index="1"]
+text = "Level 4
+
+"
+
+[node name="LevelSelector5" parent="." instance=ExtResource("2_qgm14")]
+position = Vector2(416, 224)
+
+[node name="Hole" parent="LevelSelector5" index="0" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../../LevelSelector4/Hole"),
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../../LevelSelector3/Hole")
+}
+fill_level = 0
+
+[node name="Title" parent="LevelSelector5" index="1"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 25.0
+offset_right = 47.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Bonus Level
+
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(256, 192)
+position_smoothing_enabled = true
+
+[editable path="LevelSelector"]
+[editable path="LevelSelector2"]
+[editable path="LevelSelector3"]
+[editable path="LevelSelector4"]
+[editable path="LevelSelector5"]

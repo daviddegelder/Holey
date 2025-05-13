@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpxkmqivd5kjv"]
+
+[ext_resource type="Script" uid="uid://cbpien1iyryme" path="res://Systems/level_sequence.gd" id="1_d2y4n"]
+[ext_resource type="PackedScene" uid="uid://chm3wywt56q6y" path="res://Puzzles/hard/7HoleHexagon.tscn" id="2_oh7rv"]
+[ext_resource type="PackedScene" uid="uid://b67khx535j4tj" path="res://Puzzles/medium/5HoleSnake.tscn" id="3_pgem6"]
+[ext_resource type="PackedScene" uid="uid://b70jqp0cn02wi" path="res://Puzzles/medium/9HoleDiamond.tscn" id="4_ld6er"]
+
+[node name="LevelSequence" type="Node2D" node_paths=PackedStringArray("puzzles")]
+script = ExtResource("1_d2y4n")
+puzzles = [NodePath("Levels/5HoleSnake"), NodePath("Levels/7HoleHexagon"), NodePath("Levels/9HoleDiamond")]
+
+[node name="Levels" type="Node2D" parent="."]
+position = Vector2(320, 160)
+
+[node name="7HoleHexagon" parent="Levels" instance=ExtResource("2_oh7rv")]
+visible = false
+
+[node name="5HoleSnake" parent="Levels" instance=ExtResource("3_pgem6")]
+visible = false
+position = Vector2(0, 0)
+
+[node name="9HoleDiamond" parent="Levels" instance=ExtResource("4_ld6er")]
+visible = false
