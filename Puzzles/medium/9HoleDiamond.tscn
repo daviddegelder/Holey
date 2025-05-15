@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlh53"]
 size = Vector2(192, 183)
 
-[node name="Puzzle" type="CollisionShape2D"]
+[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
 shape = SubResource("RectangleShape2D_dlh53")
 disabled = true
 script = ExtResource("1_dvfba")
+holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8"), NodePath("Hole9"), NodePath("Hole3")]
 
 [node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_cjfr8")]
 position = Vector2(-64, 0)
@@ -107,6 +108,7 @@ neighbours = {
 7: NodePath("../Hole"),
 8: NodePath("../Hole6")
 }
+fill_level = 9
 
 [node name="Hole9" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_cjfr8")]
 position = Vector2(32, 32)

@@ -6,11 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avyqt"]
 size = Vector2(192, 183)
 
-[node name="Puzzle" type="CollisionShape2D"]
+[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
 position = Vector2(320, 192)
 shape = SubResource("RectangleShape2D_avyqt")
 disabled = true
 script = ExtResource("1_avyqt")
+holes = [NodePath("Hole"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8"), NodePath("Hole9")]
 
 [node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ryu6t")]
 position = Vector2(-64, 0)

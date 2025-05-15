@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0kxm7ceurpv3"]
+
+[ext_resource type="PackedScene" uid="uid://6kyh0plkcy8e" path="res://UI/ui.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bthmtsoy1lrrr" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://crpaljc720oiq" path="res://UI/level_select.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h2yge")
+
+[node name="Puzzle" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PuzzleUI" parent="Puzzle" instance=ExtResource("1_0xm2m")]
+
+[node name="LevelSelect" type="CanvasLayer" parent="."]
+
+[node name="LevelSelect" parent="LevelSelect" instance=ExtResource("2_h2yge")]
+
+[connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="." method="_on_puzzle_ui_puzzle_complete"]
+[connection signal="level_selected" from="LevelSelect/LevelSelect" to="." method="_on_level_select_level_selected"]

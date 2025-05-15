@@ -5,7 +5,7 @@ class_name LevelSelector extends Node2D
 @onready var animation_player = $AnimationPlayer
 
 var selected: bool = false
-
+	
 func is_selected() -> bool:
 	return hole.is_complete()
 	

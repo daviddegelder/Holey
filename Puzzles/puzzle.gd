@@ -22,10 +22,10 @@ func update():
 			child.detect_neighbours()
 
 func is_complete() -> bool:
-	var result = true
 	for hole in holes:
 		if !hole.is_complete():
 			return false
+	print_debug("puzzle complete")
 	return true
 
 		

@@ -15,4 +15,5 @@ func _process(delta):
 		if level.is_selected():
 			camera.position = level.position
 			if Input.is_action_just_released("ui_accept"):
-				level_selected.emit(level.puzzle)
+				level_selected.emit(level.scene)
+				#get_tree().change_scene_to_packed(level.scene)

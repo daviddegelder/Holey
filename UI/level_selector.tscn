@@ -28,14 +28,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Title:modulate:a")
+tracks/0/path = NodePath("Title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Color(0, 1, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_n1v2o"]
@@ -69,7 +69,7 @@ script = ExtResource("1_n1v2o")
 fill_level = 1
 
 [node name="Title" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 1, 0, 0)
 offset_left = -28.0
 offset_top = -44.0
 offset_right = 26.0
