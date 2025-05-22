@@ -127,6 +127,7 @@ text = "Bonus Level
 "
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(256, 192)
 position_smoothing_enabled = true
 

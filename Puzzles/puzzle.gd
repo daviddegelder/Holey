@@ -4,9 +4,16 @@ class_name Puzzle extends CollisionShape2D
 @export_tool_button("Update") var update_action = update
 @export var holes: Array[Hole]
 
+signal finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+func _process(_delta):
+	if Engine.is_editor_hint(): return
+	if is_complete():
+		$AnimationPlayer.play("Complete")
 
 func get_holes():
 	holes = []
@@ -25,7 +32,7 @@ func is_complete() -> bool:
 	for hole in holes:
 		if !hole.is_complete():
 			return false
-	print_debug("puzzle complete")
 	return true
 
-		
+func on_complete_animation_finished():
+	finished.emit()

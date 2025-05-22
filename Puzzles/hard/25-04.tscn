@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://0mnm0l2sntld"]
 
-[ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_6yu4f"]
+[ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_6yu4f"]
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_37a0m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yu4f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37a0m"]
+resource_local_to_scene = true
 size = Vector2(224, 192)
 
-[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
-shape = SubResource("RectangleShape2D_6yu4f")
-disabled = true
-script = ExtResource("1_6yu4f")
+[node name="Puzzle" node_paths=PackedStringArray("holes") instance=ExtResource("1_6yu4f")]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_37a0m")
 holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8"), NodePath("Hole9"), NodePath("Hole3")]
 
-[node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(-84, -64)
 neighbours = {
 0: null,
@@ -26,7 +26,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole2" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(12, -32)
 neighbours = {
 0: null,
@@ -40,7 +40,7 @@ neighbours = {
 8: NodePath("../Hole4")
 }
 
-[node name="Hole4" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole4" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(-20, -64)
 neighbours = {
 0: null,
@@ -54,7 +54,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole5" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole5" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(-20, 64)
 neighbours = {
 0: null,
@@ -68,7 +68,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole6" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole6" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(-52, -32)
 neighbours = {
 0: null,
@@ -82,7 +82,7 @@ neighbours = {
 8: NodePath("../Hole")
 }
 
-[node name="Hole7" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole7" parent="." index="6" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(44, 0)
 neighbours = {
 0: null,
@@ -96,7 +96,7 @@ neighbours = {
 8: NodePath("../Hole2")
 }
 
-[node name="Hole8" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole8" parent="." index="7" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(-20, 0)
 neighbours = {
 0: null,
@@ -111,7 +111,7 @@ neighbours = {
 }
 fill_level = 9
 
-[node name="Hole9" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole9" parent="." index="8" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(12, 32)
 neighbours = {
 0: null,
@@ -125,7 +125,7 @@ neighbours = {
 8: NodePath("../Hole8")
 }
 
-[node name="Hole3" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
+[node name="Hole3" parent="." index="9" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_37a0m")]
 position = Vector2(76, -32)
 neighbours = {
 0: null,

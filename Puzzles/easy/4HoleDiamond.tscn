@@ -1,18 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://brdnb6jobe0hs"]
+[gd_scene load_steps=3 format=3 uid="uid://brdnb6jobe0hs"]
 
-[ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_d4d0e"]
+[ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_d4d0e"]
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_qj7yy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4d0e"]
-size = Vector2(128, 128)
-
-[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
-shape = SubResource("RectangleShape2D_d4d0e")
-disabled = true
-script = ExtResource("1_d4d0e")
+[node name="Puzzle" node_paths=PackedStringArray("holes") instance=ExtResource("1_d4d0e")]
 holes = [NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole6"), NodePath("Hole8")]
 
-[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+[node name="Hole2" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
 position = Vector2(32, 0)
 neighbours = {
 0: null,
@@ -26,7 +20,7 @@ neighbours = {
 8: NodePath("../Hole4")
 }
 
-[node name="Hole4" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+[node name="Hole4" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
 position = Vector2(0, -32)
 neighbours = {
 0: null,
@@ -40,7 +34,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole6" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+[node name="Hole6" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
 position = Vector2(-32, 0)
 neighbours = {
 0: null,
@@ -54,7 +48,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole8" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
+[node name="Hole8" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]
 position = Vector2(0, 32)
 neighbours = {
 0: null,

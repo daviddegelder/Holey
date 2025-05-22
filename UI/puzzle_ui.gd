@@ -13,8 +13,8 @@ func load_puzzle(new_puzzle: Puzzle):
 	current_puzzle.queue_free()
 	puzzle_scaler.add_child(new_puzzle)
 	puzzle_scaler.target = new_puzzle
+	new_puzzle.finished.connect(on_puzzle_finished)
 	current_puzzle = new_puzzle
 
-func _process(_delta):
-	if current_puzzle.is_complete():
-		puzzle_complete.emit(current_puzzle)
+func on_puzzle_finished():
+	puzzle_complete.emit(current_puzzle)

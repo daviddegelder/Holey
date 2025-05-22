@@ -1,139 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgfbtrm52iv7v"]
+[gd_scene load_steps=6 format=3 uid="uid://cgfbtrm52iv7v"]
 
 [ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_77j1r"]
-[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_hgotr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pdel"]
-size = Vector2(192, 192)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rljki"]
+resource_local_to_scene = true
+size = Vector2(128, 128)
 
-[node name="Puzzle" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
-shape = SubResource("RectangleShape2D_6pdel")
+[sub_resource type="Animation" id="Animation_rljki"]
+resource_name = "Complete"
+length = 0.500003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.266667, 0.333337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_complete_animation_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6pdel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20pgg"]
+_data = {
+&"Complete": SubResource("Animation_rljki"),
+&"RESET": SubResource("Animation_6pdel")
+}
+
+[node name="Puzzle" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_rljki")
 disabled = true
 script = ExtResource("1_77j1r")
-holes = [NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole8"), NodePath("Hole9"), NodePath("Hole3")]
 
-[node name="Hole" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(-64, 0)
-neighbours = {
-0: null,
-1: null,
-2: NodePath("../Hole6"),
-3: NodePath("../Hole8"),
-4: NodePath("../Hole3"),
-5: null,
-6: null,
-7: null,
-8: null
-}
-
-[node name="Hole2" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(32, -32)
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: null,
-4: null,
-5: NodePath("../Hole9"),
-6: NodePath("../Hole8"),
-7: NodePath("../Hole6"),
-8: NodePath("../Hole4")
-}
-
-[node name="Hole4" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(0, -64)
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: null,
-4: NodePath("../Hole2"),
-5: NodePath("../Hole8"),
-6: NodePath("../Hole6"),
-7: null,
-8: null
-}
-
-[node name="Hole5" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(0, 64)
-neighbours = {
-0: null,
-1: NodePath("../Hole8"),
-2: NodePath("../Hole9"),
-3: null,
-4: null,
-5: null,
-6: null,
-7: null,
-8: NodePath("../Hole3")
-}
-
-[node name="Hole6" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(-32, -32)
-neighbours = {
-0: null,
-1: null,
-2: NodePath("../Hole4"),
-3: NodePath("../Hole2"),
-4: NodePath("../Hole8"),
-5: NodePath("../Hole3"),
-6: null,
-7: null,
-8: null
-}
-
-[node name="Hole7" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(64, 0)
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: null,
-4: null,
-5: null,
-6: NodePath("../Hole9"),
-7: NodePath("../Hole8"),
-8: NodePath("../Hole2")
-}
-
-[node name="Hole8" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-neighbours = {
-0: null,
-1: NodePath("../Hole4"),
-2: NodePath("../Hole2"),
-3: null,
-4: NodePath("../Hole9"),
-5: NodePath("../Hole5"),
-6: NodePath("../Hole3"),
-7: null,
-8: NodePath("../Hole6")
-}
-fill_level = 9
-
-[node name="Hole9" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(32, 32)
-neighbours = {
-0: null,
-1: NodePath("../Hole2"),
-2: null,
-3: null,
-4: null,
-5: null,
-6: NodePath("../Hole5"),
-7: NodePath("../Hole3"),
-8: NodePath("../Hole8")
-}
-
-[node name="Hole3" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_hgotr")]
-position = Vector2(-32, 32)
-neighbours = {
-0: null,
-1: NodePath("../Hole6"),
-2: NodePath("../Hole8"),
-3: NodePath("../Hole9"),
-4: NodePath("../Hole5"),
-5: null,
-6: null,
-7: null,
-8: null
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_20pgg")
 }
