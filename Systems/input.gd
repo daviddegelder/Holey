@@ -2,8 +2,12 @@ extends Node
 
 var dragging: bool
 var start_position: Vector2
-var drag_vector :Vector2
+var drag_vector: Vector2
+var preview_vector: Vector2
+
 var direction: Hole.Direction
+
+var deadzone: float = 5
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -14,11 +18,15 @@ func _input(event):
 		dragging = event.pressed
 		
 		#Released
-		if !dragging:
+		if !dragging && event.pressed == false:
+			if drag_vector.length() < deadzone:
+				return
+			
 			var direction_name = Hole.Direction.keys()[vector_to_direction(drag_vector)]
 			print(direction_name)
 			Input.action_press(direction_name)
 			Input.action_release(direction_name)
+			drag_vector = Vector2.ZERO
 	
 	if event is InputEventMouseMotion and dragging:
 		drag_vector = event.position - start_position

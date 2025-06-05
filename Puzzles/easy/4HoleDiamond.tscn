@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://brdnb6jobe0hs"]
+[gd_scene load_steps=4 format=3 uid="uid://brdnb6jobe0hs"]
 
 [ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_d4d0e"]
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_qj7yy"]
 
-[node name="Puzzle" node_paths=PackedStringArray("holes") instance=ExtResource("1_d4d0e")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4d0e"]
+resource_local_to_scene = true
+size = Vector2(128, 128)
+
+[node name="Intro" node_paths=PackedStringArray("holes") instance=ExtResource("1_d4d0e")]
+shape = SubResource("RectangleShape2D_d4d0e")
+title = "Intro"
 holes = [NodePath("Hole2"), NodePath("Hole4"), NodePath("Hole6"), NodePath("Hole8")]
 
 [node name="Hole2" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qj7yy")]

@@ -7,8 +7,9 @@
 resource_local_to_scene = true
 size = Vector2(192, 128)
 
-[node name="Puzzle" node_paths=PackedStringArray("holes") instance=ExtResource("1_avyqt")]
+[node name="Snake" node_paths=PackedStringArray("holes") instance=ExtResource("1_avyqt")]
 shape = SubResource("RectangleShape2D_avyqt")
+title = "Snake"
 holes = [NodePath("Hole"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8"), NodePath("Hole9")]
 
 [node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ryu6t")]

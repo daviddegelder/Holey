@@ -1,18 +1,22 @@
-class_name LevelSelector extends Node2D
+@tool
+class_name LevelSelector extends Hole
 
 @export var scene: PackedScene
-@onready var hole = $Hole
-@onready var animation_player = $AnimationPlayer
+@export var locked: bool = true
+var finished: bool = false
+
+@export var title: String
+@export_tool_button("Rename") var rename_action = func(): 
+	name = title
+	scene.resource_name
 
 var selected: bool = false
-	
+
+
+
 func is_selected() -> bool:
-	return hole.is_complete()
+	return is_complete()
 	
 func _process(delta):
-	if (is_selected() and !selected):
-		animation_player.play("Select")
-		selected = true
-	if (!is_selected() and selected):
-		animation_player.play("Deselect")
-		selected = false
+	super(delta)
+	$Lock.visible = locked

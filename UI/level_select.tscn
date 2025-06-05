@@ -1,138 +1,212 @@
-[gd_scene load_steps=8 format=3 uid="uid://crpaljc720oiq"]
+[gd_scene load_steps=15 format=3 uid="uid://crpaljc720oiq"]
 
 [ext_resource type="Script" uid="uid://bfigo67a7avoe" path="res://UI/level_select.gd" id="1_qgm14"]
 [ext_resource type="PackedScene" uid="uid://bkeyjb10v8bch" path="res://UI/level_selector.tscn" id="2_qgm14"]
 [ext_resource type="PackedScene" uid="uid://brdnb6jobe0hs" path="res://Puzzles/easy/4HoleDiamond.tscn" id="3_r21oy"]
 [ext_resource type="PackedScene" uid="uid://b67khx535j4tj" path="res://Puzzles/medium/5HoleSnake.tscn" id="4_nxlbo"]
+[ext_resource type="PackedScene" uid="uid://crd7bq5tlvqtd" path="res://Puzzles/easy/5HoleSquare.tscn" id="4_pi8co"]
 [ext_resource type="PackedScene" uid="uid://b70jqp0cn02wi" path="res://Puzzles/medium/9HoleDiamond.tscn" id="5_pi8co"]
 [ext_resource type="PackedScene" uid="uid://chm3wywt56q6y" path="res://Puzzles/hard/7HoleHexagon.tscn" id="6_qldn0"]
 [ext_resource type="PackedScene" uid="uid://0mnm0l2sntld" path="res://Puzzles/hard/25-04.tscn" id="7_cd8ej"]
+[ext_resource type="PackedScene" uid="uid://dmjs4mvcdgplf" path="res://Puzzles/medium/8Heart.tscn" id="8_pi8co"]
+[ext_resource type="LabelSettings" uid="uid://bqdu4bsd3e4kx" path="res://UI/level_label.tres" id="10_qldn0"]
+[ext_resource type="PackedScene" uid="uid://dr11chapibe30" path="res://Puzzles/medium/Triangle.tscn" id="11_cd8ej"]
+[ext_resource type="PackedScene" uid="uid://b2000qa3m3q6h" path="res://Puzzles/easy/T-pose.tscn" id="12_cod72"]
+[ext_resource type="PackedScene" uid="uid://0g5cy505qe57" path="res://Puzzles/hard/stethoscope.tscn" id="13_62ssf"]
+[ext_resource type="PackedScene" uid="uid://0dcbxwbhfpsc" path="res://Puzzles/hard/circle.tscn" id="14_lffff"]
 
-[node name="LevelSelect" type="Node2D" node_paths=PackedStringArray("levels")]
+[node name="LevelSelect" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
 script = ExtResource("1_qgm14")
-levels = [NodePath("LevelSelector"), NodePath("LevelSelector2"), NodePath("LevelSelector3"), NodePath("LevelSelector4"), NodePath("LevelSelector5")]
-
-[node name="LevelSelector" parent="." instance=ExtResource("2_qgm14")]
-position = Vector2(256, 192)
-scene = ExtResource("3_r21oy")
-
-[node name="Hole" parent="LevelSelector" index="0" node_paths=PackedStringArray("neighbours")]
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: NodePath("../../LevelSelector2/Hole"),
-4: null,
-5: null,
-6: null,
-7: null,
-8: null
-}
-
-[node name="LevelSelector2" parent="." instance=ExtResource("2_qgm14")]
-position = Vector2(320, 192)
-scene = ExtResource("4_nxlbo")
-
-[node name="Hole" parent="LevelSelector2" index="0" node_paths=PackedStringArray("neighbours")]
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: NodePath("../../LevelSelector3/Hole"),
-4: null,
-5: null,
-6: null,
-7: NodePath("../../LevelSelector/Hole"),
-8: null
-}
-fill_level = 0
-
-[node name="Title" parent="LevelSelector2" index="1"]
-text = "Level 2
-"
-
-[node name="LevelSelector3" parent="." instance=ExtResource("2_qgm14")]
-position = Vector2(384, 192)
-scene = ExtResource("5_pi8co")
-
-[node name="Hole" parent="LevelSelector3" index="0" node_paths=PackedStringArray("neighbours")]
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: NodePath("../../LevelSelector4/Hole"),
-4: NodePath("../../LevelSelector5/Hole"),
-5: null,
-6: null,
-7: NodePath("../../LevelSelector2/Hole"),
-8: null
-}
-fill_level = 0
-
-[node name="Title" parent="LevelSelector3" index="1"]
-text = "Level 3"
-
-[node name="LevelSelector4" parent="." instance=ExtResource("2_qgm14")]
-position = Vector2(448, 192)
-scene = ExtResource("6_qldn0")
-
-[node name="Hole" parent="LevelSelector4" index="0" node_paths=PackedStringArray("neighbours")]
-neighbours = {
-0: null,
-1: null,
-2: null,
-3: null,
-4: null,
-5: null,
-6: NodePath("../../LevelSelector5/Hole"),
-7: NodePath("../../LevelSelector3/Hole"),
-8: null
-}
-fill_level = 0
-
-[node name="Title" parent="LevelSelector4" index="1"]
-text = "Level 4
-
-"
-
-[node name="LevelSelector5" parent="." instance=ExtResource("2_qgm14")]
-position = Vector2(416, 224)
-scene = ExtResource("7_cd8ej")
-
-[node name="Hole" parent="LevelSelector5" index="0" node_paths=PackedStringArray("neighbours")]
-neighbours = {
-0: null,
-1: null,
-2: NodePath("../../LevelSelector4/Hole"),
-3: null,
-4: null,
-5: null,
-6: null,
-7: null,
-8: NodePath("../../LevelSelector3/Hole")
-}
-fill_level = 0
-
-[node name="Title" parent="LevelSelector5" index="1"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -46.0
-offset_top = 25.0
-offset_right = 47.0
-offset_bottom = 100.0
-grow_horizontal = 2
-text = "Bonus Level
-
-"
+holes = [NodePath("Intro"), NodePath("X"), NodePath("Snake"), NodePath("Diamond"), NodePath("Hexagon"), NodePath("Heart"), NodePath("Good Luck"), NodePath("Triangle"), NodePath("T-Pose"), NodePath("Stethoscope"), NodePath("Donut")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(256, 192)
 position_smoothing_enabled = true
 
-[editable path="LevelSelector"]
-[editable path="LevelSelector2"]
-[editable path="LevelSelector3"]
-[editable path="LevelSelector4"]
-[editable path="LevelSelector5"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Level Title"
+label_settings = ExtResource("10_qldn0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intro" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(192, 64)
+scene = ExtResource("3_r21oy")
+locked = false
+title = "Intro"
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../X"),
+5: NodePath("../T-Pose"),
+6: null,
+7: null,
+8: null
+}
+fill_level = 1
+
+[node name="X" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(224, 96)
+scene = ExtResource("4_pi8co")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Snake"),
+5: null,
+6: NodePath("../T-Pose"),
+7: null,
+8: NodePath("../Intro")
+}
+
+[node name="Snake" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(256, 128)
+scene = ExtResource("4_nxlbo")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Diamond"),
+5: null,
+6: null,
+7: NodePath("../T-Pose"),
+8: NodePath("../X")
+}
+
+[node name="Diamond" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(288, 160)
+scene = ExtResource("5_pi8co")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../Triangle"),
+4: NodePath("../Heart"),
+5: NodePath("../Donut"),
+6: null,
+7: null,
+8: NodePath("../Snake")
+}
+
+[node name="Hexagon" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(384, 192)
+scene = ExtResource("6_qldn0")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: NodePath("../Good Luck"),
+6: NodePath("../Stethoscope"),
+7: NodePath("../Heart"),
+8: NodePath("../Triangle")
+}
+
+[node name="Heart" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(320, 192)
+scene = ExtResource("8_pi8co")
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Triangle"),
+3: NodePath("../Hexagon"),
+4: NodePath("../Stethoscope"),
+5: null,
+6: NodePath("../Donut"),
+7: null,
+8: NodePath("../Diamond")
+}
+
+[node name="Good Luck" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(384, 256)
+scene = ExtResource("7_cd8ej")
+neighbours = {
+0: null,
+1: NodePath("../Hexagon"),
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../Stethoscope")
+}
+
+[node name="Triangle" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(352, 160)
+scene = ExtResource("11_cd8ej")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hexagon"),
+5: NodePath("../Stethoscope"),
+6: NodePath("../Heart"),
+7: NodePath("../Diamond"),
+8: null
+}
+
+[node name="T-Pose" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(192, 128)
+scene = ExtResource("12_cod72")
+neighbours = {
+0: null,
+1: NodePath("../Intro"),
+2: NodePath("../X"),
+3: NodePath("../Snake"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[node name="Stethoscope" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(352, 224)
+scene = ExtResource("13_62ssf")
+neighbours = {
+0: null,
+1: NodePath("../Triangle"),
+2: NodePath("../Hexagon"),
+3: null,
+4: NodePath("../Good Luck"),
+5: null,
+6: null,
+7: NodePath("../Donut"),
+8: NodePath("../Heart")
+}
+
+[node name="Donut" parent="." node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(288, 224)
+scene = ExtResource("14_lffff")
+neighbours = {
+0: null,
+1: NodePath("../Diamond"),
+2: NodePath("../Heart"),
+3: NodePath("../Stethoscope"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

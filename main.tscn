@@ -18,4 +18,5 @@ follow_viewport_enabled = true
 [node name="LevelSelect2" parent="LevelSelect" instance=ExtResource("2_h2yge")]
 
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="." method="_on_puzzle_ui_puzzle_complete"]
+[connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2" method="level_completed"]
 [connection signal="level_selected" from="LevelSelect/LevelSelect2" to="." method="_on_level_select_level_selected"]

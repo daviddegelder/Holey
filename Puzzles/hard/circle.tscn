@@ -1,0 +1,134 @@
+[gd_scene load_steps=4 format=3 uid="uid://0dcbxwbhfpsc"]
+
+[ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_p3coa"]
+[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_srw73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttyak"]
+resource_local_to_scene = true
+size = Vector2(192, 192)
+
+[node name="Donut" node_paths=PackedStringArray("holes") instance=ExtResource("1_p3coa")]
+shape = SubResource("RectangleShape2D_ttyak")
+title = "Donut"
+holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole3"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8")]
+
+[node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(-64, 0)
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Hole2"),
+3: null,
+4: NodePath("../Hole5"),
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[node name="Hole2" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(-32, -32)
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Hole3"),
+3: NodePath("../Hole4"),
+4: null,
+5: NodePath("../Hole5"),
+6: NodePath("../Hole"),
+7: null,
+8: null
+}
+
+[node name="Hole3" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(0, -64)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hole4"),
+5: null,
+6: NodePath("../Hole2"),
+7: null,
+8: null
+}
+fill_level = 8
+
+[node name="Hole4" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(32, -32)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hole8"),
+5: NodePath("../Hole7"),
+6: null,
+7: NodePath("../Hole2"),
+8: NodePath("../Hole3")
+}
+
+[node name="AutoDetect" parent="Hole4" index="1"]
+visible = true
+
+[node name="RayCast2D" parent="Hole4/AutoDetect" index="1"]
+target_position = Vector2(-45.2548, -45.2548)
+
+[node name="Hole5" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(-32, 32)
+neighbours = {
+0: null,
+1: NodePath("../Hole2"),
+2: null,
+3: NodePath("../Hole7"),
+4: NodePath("../Hole6"),
+5: null,
+6: null,
+7: null,
+8: NodePath("../Hole")
+}
+
+[node name="Hole6" parent="." index="6" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(0, 64)
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Hole7"),
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../Hole5")
+}
+
+[node name="Hole7" parent="." index="7" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(32, 32)
+neighbours = {
+0: null,
+1: NodePath("../Hole4"),
+2: NodePath("../Hole8"),
+3: null,
+4: null,
+5: null,
+6: NodePath("../Hole6"),
+7: NodePath("../Hole5"),
+8: null
+}
+
+[node name="Hole8" parent="." index="8" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_srw73")]
+position = Vector2(64, 0)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: NodePath("../Hole7"),
+7: null,
+8: NodePath("../Hole4")
+}
+
+[editable path="Hole4"]

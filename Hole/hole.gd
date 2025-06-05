@@ -76,7 +76,7 @@ func detect_neighbours():
 		neighbours[direction] = detect_neighbour_in_direction(direction)
 
 func detect_neighbour_in_direction(direction: Direction) -> Hole:
-	%RayCast2D.target_position = Global.HOLE_DISTANCE * DIRECTION_VECTORS[direction]
+	%RayCast2D.target_position = Global.HOLE_DISTANCE * DIRECTION_VECTORS[direction].normalized()
 	%RayCast2D.force_raycast_update()
 	var collider = %RayCast2D.get_collider()
 	if collider == null or !collider.is_in_group("Hole"):

@@ -66,3 +66,5 @@ script = ExtResource("1_77j1r")
 libraries = {
 &"": SubResource("AnimationLibrary_20pgg")
 }
+
+[connection signal="editor_state_changed" from="." to="." method="_on_editor_state_changed"]

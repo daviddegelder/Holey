@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://crd7bq5tlvqtd"]
+
+[ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_pg53p"]
+[ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_ot5yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2koh"]
+resource_local_to_scene = true
+size = Vector2(128, 128)
+
+[node name="X" node_paths=PackedStringArray("holes") instance=ExtResource("1_pg53p")]
+shape = SubResource("RectangleShape2D_n2koh")
+title = "X"
+holes = [NodePath("Hole"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole3"), NodePath("Hole2")]
+
+[node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ot5yh")]
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Hole3"),
+3: null,
+4: NodePath("../Hole4"),
+5: null,
+6: NodePath("../Hole5"),
+7: null,
+8: NodePath("../Hole2")
+}
+fill_level = 5
+
+[node name="Hole4" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ot5yh")]
+position = Vector2(32, 32)
+neighbours = {
+0: null,
+1: NodePath("../Hole3"),
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: NodePath("../Hole5"),
+8: NodePath("../Hole")
+}
+
+[node name="Hole5" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ot5yh")]
+position = Vector2(-32, 32)
+neighbours = {
+0: null,
+1: NodePath("../Hole2"),
+2: NodePath("../Hole"),
+3: NodePath("../Hole4"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[node name="Hole3" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ot5yh")]
+position = Vector2(32, -32)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: NodePath("../Hole4"),
+6: NodePath("../Hole"),
+7: NodePath("../Hole2"),
+8: null
+}
+
+[node name="Hole2" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_ot5yh")]
+position = Vector2(-32, -32)
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../Hole3"),
+4: NodePath("../Hole"),
+5: NodePath("../Hole5"),
+6: null,
+7: null,
+8: null
+}

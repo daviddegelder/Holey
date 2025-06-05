@@ -1,20 +1,28 @@
 extends Node
 
-@export var puzzle: PackedScene
-@onready var puzzle_scaler: RectangleScale2D = $Control/HBoxContainer/PuzzleContainer/RectScale2D
-@onready var current_puzzle: Puzzle = $Control/HBoxContainer/PuzzleContainer/RectScale2D/Puzzle
+@export var puzzle_scene: PackedScene
+@onready var puzzle_scaler: RectangleScale2D = %RectScale2D
+@onready var current_puzzle: Puzzle = %Puzzle
 
 signal puzzle_complete(puzzle: Puzzle)
 
 func _ready():
-	load_puzzle(puzzle.instantiate())
+	if puzzle_scene:
+		load_puzzle(puzzle_scene)
 
-func load_puzzle(new_puzzle: Puzzle):
+func load_puzzle(puzzle: PackedScene):
+	var new_puzzle: Puzzle = puzzle.instantiate()
 	current_puzzle.queue_free()
 	puzzle_scaler.add_child(new_puzzle)
 	puzzle_scaler.target = new_puzzle
 	new_puzzle.finished.connect(on_puzzle_finished)
 	current_puzzle = new_puzzle
+	puzzle_scene = puzzle
+	%LevelTitle.text = current_puzzle.title
 
 func on_puzzle_finished():
-	puzzle_complete.emit(current_puzzle)
+	puzzle_complete.emit(puzzle_scene)
+
+
+func _on_reset_pressed():
+	load_puzzle(puzzle_scene)

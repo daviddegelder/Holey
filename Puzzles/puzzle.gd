@@ -1,6 +1,7 @@
 @tool
 class_name Puzzle extends CollisionShape2D
 
+@export var title: String
 @export_tool_button("Update") var update_action = update
 @export var holes: Array[Hole]
 
@@ -36,3 +37,7 @@ func is_complete() -> bool:
 
 func on_complete_animation_finished():
 	finished.emit()
+
+
+func _on_editor_state_changed():
+	update()
