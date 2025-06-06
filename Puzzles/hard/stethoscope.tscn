@@ -18,9 +18,9 @@ position = Vector2(-64, -48)
 neighbours = {
 0: null,
 1: null,
-2: null,
+2: NodePath("../Hole2"),
 3: null,
-4: null,
+4: NodePath("../Hole5"),
 5: null,
 6: null,
 7: null,
@@ -33,10 +33,10 @@ neighbours = {
 0: null,
 1: null,
 2: null,
-3: null,
+3: NodePath("../Hole4"),
 4: null,
-5: null,
-6: null,
+5: NodePath("../Hole5"),
+6: NodePath("../Hole"),
 7: null,
 8: null
 }
@@ -45,7 +45,7 @@ neighbours = {
 position = Vector2(0, 80)
 neighbours = {
 0: null,
-1: null,
+1: NodePath("../Hole6"),
 2: null,
 3: null,
 4: null,
@@ -62,10 +62,10 @@ neighbours = {
 1: null,
 2: null,
 3: null,
-4: null,
-5: null,
+4: NodePath("../Hole8"),
+5: NodePath("../Hole7"),
 6: null,
-7: null,
+7: NodePath("../Hole2"),
 8: null
 }
 
@@ -75,28 +75,28 @@ target_position = Vector2(-45.2548, -45.2548)
 [node name="Hole5" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(-32, -16)
 neighbours = {
-0: NodePath("../Hole"),
-1: NodePath("../Hole"),
-2: NodePath("../Hole"),
-3: NodePath("../Hole"),
-4: NodePath("../Hole"),
-5: NodePath("../Hole"),
-6: NodePath("../Hole"),
-7: NodePath("../Hole"),
+0: null,
+1: NodePath("../Hole2"),
+2: null,
+3: NodePath("../Hole7"),
+4: NodePath("../Hole6"),
+5: null,
+6: null,
+7: null,
 8: NodePath("../Hole")
 }
 
 [node name="Hole6" parent="." index="6" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(0, 16)
 neighbours = {
-0: NodePath("../Hole5"),
-1: NodePath("../Hole5"),
-2: NodePath("../Hole5"),
-3: NodePath("../Hole5"),
-4: NodePath("../Hole5"),
-5: NodePath("../Hole5"),
-6: NodePath("../Hole5"),
-7: NodePath("../Hole5"),
+0: null,
+1: null,
+2: NodePath("../Hole7"),
+3: null,
+4: null,
+5: NodePath("../Hole3"),
+6: null,
+7: null,
 8: NodePath("../Hole5")
 }
 fill_level = 8
@@ -105,27 +105,27 @@ fill_level = 8
 position = Vector2(32, -16)
 neighbours = {
 0: null,
-1: null,
-2: null,
+1: NodePath("../Hole4"),
+2: NodePath("../Hole8"),
 3: null,
 4: null,
 5: null,
-6: null,
-7: null,
+6: NodePath("../Hole6"),
+7: NodePath("../Hole5"),
 8: null
 }
 
 [node name="Hole8" parent="." index="8" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(64, -48)
 neighbours = {
-0: NodePath("../Hole4"),
-1: NodePath("../Hole4"),
-2: NodePath("../Hole4"),
-3: NodePath("../Hole4"),
-4: NodePath("../Hole4"),
-5: NodePath("../Hole4"),
-6: NodePath("../Hole4"),
-7: NodePath("../Hole4"),
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: NodePath("../Hole7"),
+7: null,
 8: NodePath("../Hole4")
 }
 
