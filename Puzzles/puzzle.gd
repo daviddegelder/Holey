@@ -39,5 +39,5 @@ func on_complete_animation_finished():
 	finished.emit()
 
 
-func _on_editor_state_changed():
-	update()
+#func _on_editor_state_changed():
+	#update()
