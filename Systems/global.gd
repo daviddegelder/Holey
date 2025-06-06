@@ -1,7 +1,21 @@
 extends Node
 
 const HOLE_DISTANCE: int = 64
-@export var main_color: Color
+
+enum ColorKey{
+	MAIN,
+	SUBTLE,
+	HOLE,
+	BACKGROUND
+}
+
+var color_palette: Dictionary[ColorKey,Color] = {
+	ColorKey.MAIN: Color("ffbe33"),
+	ColorKey.SUBTLE: Color("ffeccb"),
+	ColorKey.HOLE: Color("ffffff"),
+	ColorKey.BACKGROUND: Color(0.933, 0.933, 0.933, 1.0)
+}
+
 
 func _ready():
 	var current_scene = get_tree().current_scene

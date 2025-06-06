@@ -6,4 +6,14 @@
 
 [node name="Control" parent="." instance=ExtResource("1_47v17")]
 
+[node name="Control" parent="Control" index="0" node_paths=PackedStringArray("landscape_positions", "portrait_positions")]
+landscape_positions = {
+NodePath("%PuzzleContainer"): NodePath("HBoxContainer/VBoxContainer/Middle"),
+NodePath("%LevelTitle"): NodePath("HBoxContainer/VBoxContainer/Top")
+}
+portrait_positions = {
+NodePath("%PuzzleContainer"): NodePath("VBoxContainer/VBoxContainer/Middle"),
+NodePath("%LevelTitle"): NodePath("VBoxContainer/Top/Control")
+}
+
 [editable path="Control"]

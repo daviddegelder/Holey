@@ -14,6 +14,9 @@ var bg_target_color: Color
 var fill_target_scale
 
 func _ready():
+	bg_default_color = Global.color_palette[Global.ColorKey.HOLE]
+	bg_complete_color = Global.color_palette[Global.ColorKey.SUBTLE]
+	
 	bg_target_color = bg_default_color
 	%Background.modulate = bg_default_color
 	

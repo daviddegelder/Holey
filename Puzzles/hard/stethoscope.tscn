@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://cgfbtrm52iv7v" path="res://Puzzles/puzzle.tscn" id="1_lei8g"]
 [ext_resource type="PackedScene" uid="uid://bkaj5fl2k43vq" path="res://Hole/hole.tscn" id="2_4no70"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttyak"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg37d"]
 resource_local_to_scene = true
 size = Vector2(192, 224)
 
 [node name="Stethoscope" node_paths=PackedStringArray("holes") instance=ExtResource("1_lei8g")]
 position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_ttyak")
+shape = SubResource("RectangleShape2D_hg37d")
 title = "Stethoscope"
 holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole3"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8")]
 
