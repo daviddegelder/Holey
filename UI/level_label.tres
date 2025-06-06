@@ -1,10 +1,7 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bqdu4bsd3e4kx"]
 
-[sub_resource type="SystemFont" id="SystemFont_n1v2o"]
-font_names = PackedStringArray("Atkinson Hyperlegible")
-font_weight = 800
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://bxn86lwutx76d" path="res://UI/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf" id="1_sbpkx"]
 
 [resource]
-font = SubResource("SystemFont_n1v2o")
+font = ExtResource("1_sbpkx")
 font_color = Color(0, 0, 0, 1)
