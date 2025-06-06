@@ -24,7 +24,8 @@ func _input(event):
 				Input.action_release("Select")
 				return
 			
-			var direction_name = Hole.Direction.keys()[vector_to_direction(drag_vector)]
+			direction = vector_to_direction(drag_vector)
+			var direction_name = Hole.Direction.keys()[direction]
 			print(direction_name)
 			Input.action_press(direction_name)
 			Input.action_release(direction_name)

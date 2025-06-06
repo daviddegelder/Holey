@@ -1,6 +1,7 @@
 extends Node
 
 const HOLE_DISTANCE: int = 64
+@export var main_color: Color
 
 func _ready():
 	var current_scene = get_tree().current_scene

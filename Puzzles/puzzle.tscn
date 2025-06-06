@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgfbtrm52iv7v"]
+[gd_scene load_steps=7 format=3 uid="uid://cgfbtrm52iv7v"]
 
 [ext_resource type="Script" uid="uid://d3jcc6sgagf5y" path="res://Puzzles/puzzle.gd" id="1_77j1r"]
+[ext_resource type="AudioStream" uid="uid://pacvi7saitfr" path="res://Audio/move.wav" id="2_6pdel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljki"]
 resource_local_to_scene = true
@@ -63,8 +64,12 @@ disabled = true
 script = ExtResource("1_77j1r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_20pgg")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6pdel")
 
 [connection signal="editor_state_changed" from="." to="." method="_on_editor_state_changed"]

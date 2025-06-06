@@ -21,6 +21,7 @@ func level_completed(completed_scene: PackedScene):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	super(_delta)
 	if Engine.is_editor_hint(): return
 
 	for level in holes:

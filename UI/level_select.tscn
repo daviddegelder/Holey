@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://crpaljc720oiq"]
+[gd_scene load_steps=16 format=3 uid="uid://crpaljc720oiq"]
 
 [ext_resource type="Script" uid="uid://bfigo67a7avoe" path="res://UI/level_select.gd" id="1_qgm14"]
 [ext_resource type="PackedScene" uid="uid://bkeyjb10v8bch" path="res://UI/level_selector.tscn" id="2_qgm14"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2000qa3m3q6h" path="res://Puzzles/easy/T-pose.tscn" id="12_cod72"]
 [ext_resource type="PackedScene" uid="uid://0g5cy505qe57" path="res://Puzzles/hard/stethoscope.tscn" id="13_62ssf"]
 [ext_resource type="PackedScene" uid="uid://0dcbxwbhfpsc" path="res://Puzzles/hard/circle.tscn" id="14_lffff"]
+[ext_resource type="AudioStream" uid="uid://pacvi7saitfr" path="res://Audio/move.wav" id="15_rsvb7"]
 
 [node name="LevelSelect" type="CollisionShape2D" node_paths=PackedStringArray("holes")]
 script = ExtResource("1_qgm14")
@@ -208,5 +209,8 @@ neighbours = {
 7: null,
 8: null
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_rsvb7")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

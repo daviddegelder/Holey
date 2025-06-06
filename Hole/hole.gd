@@ -30,8 +30,11 @@ const DIRECTION_VECTORS: Dictionary[Direction, Vector2] = {
 @export_tool_button("Detect Neighbours") var detect_neighbours_action = detect_neighbours;
 @export var neighbours: Dictionary[Direction, Hole]
 @export var fill_level: int
+var has_flowed: bool = false
 
-func _process(_delta):
+var active = true
+
+func _process(_delta):	
 	if not Engine.is_editor_hint():
 		var input_direction: Direction = get_input_direction()
 		if input_direction != Direction.Null:
@@ -44,11 +47,15 @@ func flow(direction: Direction):
 	if fill_level > 0 and has_neighbour(direction):
 		fill_level -= 1
 		neighbours[direction].fill.call_deferred()
+		has_flowed = true
+		
 
 func fill():
 	fill_level += 1
 
 func get_input_direction():
+	if !active: return Direction.Null
+	
 	if Input.is_action_just_pressed("North"):
 		return Direction.North
 	if Input.is_action_just_pressed("NorthEast"):
