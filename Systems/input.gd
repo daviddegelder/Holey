@@ -20,6 +20,8 @@ func _input(event):
 		#Released
 		if !dragging && event.pressed == false:
 			if drag_vector.length() < deadzone:
+				Input.action_press("Select")
+				Input.action_release("Select")
 				return
 			
 			var direction_name = Hole.Direction.keys()[vector_to_direction(drag_vector)]
