@@ -14,6 +14,7 @@ script = ExtResource("1_y0jvi")
 [node name="Render" type="Node2D" parent="."]
 unique_name_in_owner = true
 process_priority = -1
+scale = Vector2(0.16, 0.16)
 script = ExtResource("2_wbotu")
 lerp_weight = 0.2
 min_scale = 0.2
@@ -26,7 +27,6 @@ bg_complete_color = Color(1, 0.92498, 0.796529, 1)
 unique_name_in_owner = true
 
 [node name="Sprite" type="Sprite2D" parent="Render/Background"]
-scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")
 
 [node name="Fill" type="Node2D" parent="Render"]
@@ -35,7 +35,6 @@ scale = Vector2(1e-05, 1e-05)
 
 [node name="Sprite" type="Sprite2D" parent="Render/Fill"]
 modulate = Color(1, 0.745098, 0.2, 1)
-scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_q25xr")
 script = ExtResource("4_wbotu")
 

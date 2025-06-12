@@ -59,6 +59,7 @@ _data = {
 }
 
 [node name="Puzzle" type="CollisionShape2D"]
+process_priority = 1
 shape = SubResource("RectangleShape2D_rljki")
 disabled = true
 script = ExtResource("1_77j1r")

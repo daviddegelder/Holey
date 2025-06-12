@@ -33,6 +33,7 @@ func _input(event):
 	
 	if event is InputEventMouseMotion and dragging:
 		drag_vector = event.position - start_position
+		preview_vector = drag_vector.normalized()
 
 func vector_to_direction(vector: Vector2) -> Hole.Direction:
 	vector = vector.normalized().snapped(Vector2.ONE)
