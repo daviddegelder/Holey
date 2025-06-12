@@ -1,7 +1,7 @@
 @tool
 extends Puzzle
 
-@onready var camera: Camera2D = $Camera2D
+#@onready var camera: Camera2D = $Camera2D
 signal level_selected(level: PackedScene)
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +27,7 @@ func _process(_delta):
 	for level in holes:
 		if level is not LevelSelector: return
 		if level.is_selected():
-			camera.position = level.position
+			#camera.position = level.position
 			%RichTextLabel.text = level.name
 			if Input.is_action_just_released("Select") && !level.locked:
 				level_selected.emit(level.scene)
