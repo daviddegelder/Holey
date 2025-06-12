@@ -67,6 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="Control/HBoxContainer/Left/VBox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.763382, 0.775091, 0.847301, 1)
@@ -147,6 +148,7 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control/HBoxContainer/Right"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
