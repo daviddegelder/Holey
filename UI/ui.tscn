@@ -37,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 180)
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_hat8c")
 landscape_layout = NodePath("HBoxContainer")
 portrait_layout = NodePath("VBoxContainer")
@@ -90,6 +90,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Top" type="Control" parent="Control/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -112,6 +113,7 @@ vertical_alignment = 1
 [node name="Middle" type="Control" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="PuzzleContainer" type="Control" parent="Control/HBoxContainer/VBoxContainer/Middle"]
 unique_name_in_owner = true
@@ -123,7 +125,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="RectScale2D" type="Area2D" parent="Control/HBoxContainer/VBoxContainer/Middle/PuzzleContainer" node_paths=PackedStringArray("container", "target")]
 unique_name_in_owner = true
@@ -215,10 +217,12 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Middle" type="Control" parent="Control/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Bottom Margin" type="Control" parent="Control/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)

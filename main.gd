@@ -42,5 +42,10 @@ func _on_level_select_level_selected(level):
 
 
 func _on_level_select_all_completed(position):
+	level_select_layer.process_mode = Node.PROCESS_MODE_DISABLED
 	$Transition/FillScreenAnimation.global_position = position
 	$Transition/FillScreenAnimation.play()
+
+
+func _on_fill_screen_animation_return_pressed():
+	level_select_layer.process_mode = Node.PROCESS_MODE_INHERIT

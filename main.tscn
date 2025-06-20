@@ -69,14 +69,16 @@ script = ExtResource("1_h2yge")
 visible = false
 
 [node name="PuzzleUI" parent="Puzzle" instance=ExtResource("1_0xm2m")]
+mouse_filter = 2
 
 [node name="LevelSelect" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
 [node name="LevelSelect2" parent="LevelSelect" instance=ExtResource("2_h2yge")]
+mouse_filter = 2
 
 [node name="RectangleScale2D" parent="LevelSelect/LevelSelect2/CenterContainer" index="0"]
-scale = Vector2(1.35338, 1.35338)
+scale = Vector2(1.3533834, 1.3533834)
 
 [node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="1" node_paths=PackedStringArray("neighbours")]
 neighbours = {
@@ -244,6 +246,7 @@ script = ExtResource("4_1bvp3")
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" method="_on_puzzle_ui_puzzle_complete"]
 [connection signal="all_completed" from="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" to="." method="_on_level_select_all_completed"]
 [connection signal="level_selected" from="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" to="." method="_on_level_select_level_selected"]
+[connection signal="return_pressed" from="Transition/FillScreenAnimation" to="." method="_on_fill_screen_animation_return_pressed"]
 
 [editable path="LevelSelect/LevelSelect2"]
 [editable path="Transition/FillScreenAnimation"]
