@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0kxm7ceurpv3"]
+[gd_scene load_steps=10 format=3 uid="uid://c0kxm7ceurpv3"]
 
 [ext_resource type="PackedScene" uid="uid://6kyh0plkcy8e" path="res://UI/ui.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bthmtsoy1lrrr" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://crpaljc720oiq" path="res://UI/level_select.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://b0fk7gknspfpr" path="res://Systems/dynamic_color.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c3j8tak0ogyf5" path="res://UI/fill_screen_animation.tscn" id="5_lquwl"]
 
 [sub_resource type="Animation" id="Animation_1bvp3"]
 length = 0.001
@@ -74,6 +75,58 @@ follow_viewport_enabled = true
 
 [node name="LevelSelect2" parent="LevelSelect" instance=ExtResource("2_h2yge")]
 
+[node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="1" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../X"),
+5: NodePath("../T-Pose"),
+6: null,
+7: null,
+8: null
+}
+
+[node name="X" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="2" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Snake"),
+5: null,
+6: NodePath("../T-Pose"),
+7: null,
+8: NodePath("../Intro")
+}
+
+[node name="T-Pose" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="3" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: NodePath("../Intro"),
+2: NodePath("../X"),
+3: NodePath("../Snake"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
+}
+
+[node name="Snake" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="4" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: NodePath("../T-Pose"),
+8: NodePath("../X")
+}
+
 [node name="Transition" type="CanvasLayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
@@ -82,13 +135,21 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
+modulate = Color(1, 0.745098, 0.2, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("4_1bvp3")
 
+[node name="FillScreenAnimation" parent="Transition" instance=ExtResource("5_lquwl")]
+
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="." method="_on_puzzle_ui_puzzle_complete"]
-[connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2" method="level_completed"]
-[connection signal="level_selected" from="LevelSelect/LevelSelect2" to="." method="_on_level_select_level_selected"]
+[connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" method="_on_puzzle_ui_puzzle_complete"]
+[connection signal="all_completed" from="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" to="." method="_on_level_select_all_completed"]
+[connection signal="level_selected" from="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" to="." method="_on_level_select_level_selected"]
+
+[editable path="LevelSelect/LevelSelect2"]
+[editable path="Transition/FillScreenAnimation"]

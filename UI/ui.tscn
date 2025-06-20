@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6kyh0plkcy8e"]
+[gd_scene load_steps=11 format=3 uid="uid://6kyh0plkcy8e"]
 
 [ext_resource type="Script" uid="uid://b1me2xduy25rl" path="res://UI/puzzle_ui.gd" id="1_3sbvi"]
 [ext_resource type="Script" uid="uid://bbo0krscm276q" path="res://UI/OrientationControl.gd" id="1_hat8c"]
@@ -14,6 +14,10 @@ region = Rect2(150, 100, 40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7tqi"]
 size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7tqi"]
+atlas = ExtResource("3_3sbvi")
+region = Rect2(150, 150, 40, 40)
 
 [node name="PuzzleUI" type="Control"]
 layout_mode = 3
@@ -47,6 +51,7 @@ NodePath("%LevelTitle"): NodePath("VBoxContainer/Top/Control")
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,8 +127,7 @@ mouse_filter = 1
 
 [node name="RectScale2D" type="Area2D" parent="Control/HBoxContainer/VBoxContainer/Middle/PuzzleContainer" node_paths=PackedStringArray("container", "target")]
 unique_name_in_owner = true
-position = Vector2(216, 141)
-scale = Vector2(4.40625, 4.40625)
+scale = Vector2(1e-05, 1e-05)
 monitoring = false
 monitorable = false
 script = ExtResource("2_3sbvi")
@@ -157,8 +161,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.763382, 0.775091, 0.847301, 1)
 
+[node name="Back" type="Button" parent="Control/HBoxContainer/Right"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = SubResource("AtlasTexture_c7tqi")
+icon_alignment = 1
+expand_icon = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -184,10 +202,14 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Right" type="Control" parent="Control/VBoxContainer/Top"]
+[node name="Back2" type="Button" parent="Control/VBoxContainer/Top"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = SubResource("AtlasTexture_c7tqi")
+icon_alignment = 1
+expand_icon = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -203,7 +225,6 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="Bottom" type="Control" parent="Control/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 
@@ -218,4 +239,6 @@ grow_vertical = 2
 color = Color(0.763382, 0.775091, 0.847301, 1)
 
 [connection signal="pressed" from="Control/HBoxContainer/Left/VBox/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Right/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Top/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Top/Back2" to="." method="_on_back_pressed"]

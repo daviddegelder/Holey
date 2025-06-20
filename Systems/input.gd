@@ -9,7 +9,7 @@ var direction: Hole.Direction
 
 var deadzone: float = 5
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		#Just pressed
 		if !dragging:

@@ -1,0 +1,183 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3j8tak0ogyf5"]
+
+[ext_resource type="Script" uid="uid://co80n34odb4ac" path="res://UI/fill_screen_animation.gd" id="1_cfy4o"]
+[ext_resource type="Texture2D" uid="uid://bvtqcc0mbkwg1" path="res://Sprites/circle_256.png" id="1_y0mrv"]
+[ext_resource type="Script" uid="uid://b0fk7gknspfpr" path="res://Systems/dynamic_color.gd" id="2_cfy4o"]
+[ext_resource type="LabelSettings" uid="uid://bqdu4bsd3e4kx" path="res://UI/level_label.tres" id="4_wfsnw"]
+[ext_resource type="Theme" uid="uid://cqlwd2qbjxcop" path="res://UI/holey_theme.tres" id="5_wfsnw"]
+
+[sub_resource type="Animation" id="Animation_oc45k"]
+resource_name = "Grow"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 2.37842),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EndScreen/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EndScreen/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_wfsnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EndScreen/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EndScreen/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_niuub"]
+resource_name = "Shrink"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.287175, 0.5),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EndScreen/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EndScreen/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_niuub"]
+_data = {
+&"Grow": SubResource("Animation_oc45k"),
+&"RESET": SubResource("Animation_wfsnw"),
+&"Shrink": SubResource("Animation_niuub")
+}
+
+[node name="FillScreenAnimation" type="Node2D"]
+script = ExtResource("1_cfy4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.745098, 0.2, 1)
+z_index = 1
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_y0mrv")
+script = ExtResource("2_cfy4o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_niuub")
+}
+
+[node name="EndScreen" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = -48.5
+offset_right = 193.5
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+text = "All levels completed.
+Thanks for playing Holey!"
+label_settings = ExtResource("4_wfsnw")
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_wfsnw")
+text = "Return"
+
+[connection signal="pressed" from="EndScreen/VBoxContainer/Return" to="." method="_on_return_pressed"]

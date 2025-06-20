@@ -26,3 +26,7 @@ func on_puzzle_finished():
 
 func _on_reset_pressed():
 	load_puzzle(puzzle_scene)
+
+
+func _on_back_pressed():
+	puzzle_complete.emit(null)

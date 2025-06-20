@@ -20,3 +20,4 @@ func is_selected() -> bool:
 func _process(delta):
 	super(delta)
 	$Lock.visible = locked
+	$Render/Background/LevelComplete.visible = finished

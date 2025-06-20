@@ -39,3 +39,8 @@ func _on_puzzle_ui_puzzle_complete(puzzle):
 func _on_level_select_level_selected(level):
 	puzzle_ui.load_puzzle(level)
 	activate_layer(puzzle_ui_layer)
+
+
+func _on_level_select_all_completed(position):
+	$Transition/FillScreenAnimation.global_position = position
+	$Transition/FillScreenAnimation.play()
