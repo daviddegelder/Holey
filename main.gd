@@ -32,7 +32,7 @@ func deactivate_layer(layer: CanvasLayer):
 	layer.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	
-func _on_puzzle_ui_puzzle_complete(puzzle):
+func _on_puzzle_ui_puzzle_complete(_puzzle, _moves):
 	activate_layer(level_select_layer)
 
 

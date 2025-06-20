@@ -4,7 +4,7 @@ extends Node
 @onready var puzzle_scaler: RectangleScale2D = %RectScale2D
 @onready var current_puzzle: Puzzle = %Puzzle
 
-signal puzzle_complete(puzzle: Puzzle)
+signal puzzle_complete(puzzle: Puzzle, moves: int)
 
 func _ready():
 	if puzzle_scene:
@@ -20,8 +20,8 @@ func load_puzzle(puzzle: PackedScene):
 	puzzle_scene = puzzle
 	%LevelTitle.text = current_puzzle.title
 
-func on_puzzle_finished():
-	puzzle_complete.emit(puzzle_scene)
+func on_puzzle_finished(moves: int):
+	puzzle_complete.emit(puzzle_scene, moves)
 
 
 func _on_reset_pressed():
@@ -29,4 +29,4 @@ func _on_reset_pressed():
 
 
 func _on_back_pressed():
-	puzzle_complete.emit(null)
+	puzzle_complete.emit(null,0)

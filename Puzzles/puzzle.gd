@@ -7,7 +7,7 @@ class_name Puzzle extends CollisionShape2D
 
 var moves: int = 0
 
-signal finished
+signal finished(moves: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,7 +43,7 @@ func is_complete() -> bool:
 	return true
 
 func on_complete_animation_finished():
-	finished.emit()
+	finished.emit(moves)
 	
 func has_moved():
 	for hole in holes:

@@ -4,11 +4,12 @@ class_name LevelSelector extends Hole
 @export var scene: PackedScene
 @export var locked: bool = true
 var finished: bool = false
+var moves: int = 99999999999
 
 @export var title: String
 @export_tool_button("Rename") var rename_action = func(): 
 	name = title
-	scene.resource_name
+	#scene.resource_name
 
 var selected: bool = false
 

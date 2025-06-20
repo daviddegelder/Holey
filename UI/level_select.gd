@@ -12,10 +12,11 @@ var selected_level
 func _ready():
 	pass # Replace with function body.
 
-func level_completed(completed_scene: PackedScene):
+func level_completed(completed_scene: PackedScene, level_moves: int):
 	for level in holes:
 		if level.scene == completed_scene:
 			level.finished = true
+			level.moves = min(level_moves, level.moves)
 			print_debug("finished " + level.name)
 			for neighbour in level.neighbours.values():
 				if neighbour is LevelSelector:
@@ -31,6 +32,10 @@ func _process(_delta):
 		if level.is_selected():
 			#camera.position = level.position
 			%RichTextLabel.text = level.name
+			if level.finished:
+				%MoveLabel.text = "Completed in %s moves" % level.moves
+			else:
+				%MoveLabel.text = ""
 			selected_level = level
 			if Input.is_action_just_released("Select") && !level.locked:
 				level_selected.emit(level.scene)
@@ -43,8 +48,8 @@ func _on_visibility_changed():
 	%CanvasLayer.visible = is_visible_in_tree()
 
 
-func _on_puzzle_ui_puzzle_complete(puzzle):
-	level_completed(puzzle)
+func _on_puzzle_ui_puzzle_complete(puzzle, level_moves):
+	level_completed(puzzle, level_moves)
 	
 func check_all_levels_completed():
 	for level in holes:
