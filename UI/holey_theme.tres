@@ -38,7 +38,8 @@ corner_radius_bottom_left = 5
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/icon_normal_color = Color(0.273873, 0.273873, 0.273873, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
 Button/fonts/font = ExtResource("1_8j54v")
 Button/styles/hover = SubResource("StyleBoxFlat_8j54v")
 Button/styles/normal = ExtResource("2_ouiar")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crpaljc720oiq"]
+[gd_scene load_steps=18 format=3 uid="uid://crpaljc720oiq"]
 
 [ext_resource type="Script" uid="uid://khxwi3tw7vr7" path="res://UI/RectangleScale2D.gd" id="1_eh4xk"]
 [ext_resource type="Script" uid="uid://bfigo67a7avoe" path="res://UI/level_select.gd" id="1_qgm14"]
@@ -6,8 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://brdnb6jobe0hs" path="res://Puzzles/easy/4HoleDiamond.tscn" id="3_r21oy"]
 [ext_resource type="PackedScene" uid="uid://b67khx535j4tj" path="res://Puzzles/medium/5HoleSnake.tscn" id="4_nxlbo"]
 [ext_resource type="PackedScene" uid="uid://crd7bq5tlvqtd" path="res://Puzzles/easy/5HoleSquare.tscn" id="4_pi8co"]
+[ext_resource type="PackedScene" uid="uid://b70jqp0cn02wi" path="res://Puzzles/medium/9HoleDiamond.tscn" id="9_eh4xk"]
+[ext_resource type="PackedScene" uid="uid://chm3wywt56q6y" path="res://Puzzles/hard/7HoleHexagon.tscn" id="10_nif6o"]
 [ext_resource type="LabelSettings" uid="uid://bqdu4bsd3e4kx" path="res://UI/level_label.tres" id="10_qldn0"]
+[ext_resource type="PackedScene" uid="uid://dmjs4mvcdgplf" path="res://Puzzles/medium/8Heart.tscn" id="11_85jdw"]
 [ext_resource type="PackedScene" uid="uid://b2000qa3m3q6h" path="res://Puzzles/easy/T-pose.tscn" id="12_cod72"]
+[ext_resource type="PackedScene" uid="uid://0mnm0l2sntld" path="res://Puzzles/hard/25-04.tscn" id="12_qk6sb"]
+[ext_resource type="PackedScene" uid="uid://dr11chapibe30" path="res://Puzzles/medium/Triangle.tscn" id="13_4vepe"]
+[ext_resource type="PackedScene" uid="uid://0g5cy505qe57" path="res://Puzzles/hard/stethoscope.tscn" id="14_4veh4"]
+[ext_resource type="PackedScene" uid="uid://0dcbxwbhfpsc" path="res://Puzzles/hard/circle.tscn" id="15_2vnsw"]
 [ext_resource type="AudioStream" uid="uid://pacvi7saitfr" path="res://Audio/move.wav" id="15_rsvb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nif6o"]
@@ -40,8 +47,9 @@ metadata/_custom_type_script = "uid://khxwi3tw7vr7"
 [node name="LevelSelect" type="CollisionShape2D" parent="CenterContainer/RectangleScale2D" node_paths=PackedStringArray("holes")]
 process_priority = 1
 shape = SubResource("RectangleShape2D_nif6o")
+disabled = true
 script = ExtResource("1_qgm14")
-holes = [NodePath("Intro"), NodePath("X"), NodePath("T-Pose"), NodePath("Snake")]
+holes = [NodePath("Intro"), NodePath("X"), NodePath("T-Pose"), NodePath("Snake"), NodePath("Diamond"), NodePath("Hexagon"), NodePath("Heart"), NodePath("Good Luck"), NodePath("Triangle"), NodePath("Stethoscope"), NodePath("Donut")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CenterContainer/RectangleScale2D/LevelSelect"]
 unique_name_in_owner = true
@@ -114,11 +122,116 @@ neighbours = {
 1: null,
 2: null,
 3: null,
-4: null,
+4: NodePath("../Diamond"),
 5: null,
 6: null,
 7: NodePath("../T-Pose"),
 8: NodePath("../X")
+}
+
+[node name="Diamond" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(5, -11)
+scene = ExtResource("9_eh4xk")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../Triangle"),
+4: NodePath("../Heart"),
+5: NodePath("../Donut"),
+6: null,
+7: null,
+8: NodePath("../Snake")
+}
+
+[node name="Hexagon" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(101, 21)
+scene = ExtResource("10_nif6o")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: NodePath("../Good Luck"),
+6: NodePath("../Stethoscope"),
+7: NodePath("../Heart"),
+8: NodePath("../Triangle")
+}
+
+[node name="Heart" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(37, 21)
+scene = ExtResource("11_85jdw")
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Triangle"),
+3: NodePath("../Hexagon"),
+4: NodePath("../Stethoscope"),
+5: null,
+6: NodePath("../Donut"),
+7: null,
+8: NodePath("../Diamond")
+}
+
+[node name="Good Luck" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(101, 85)
+scene = ExtResource("12_qk6sb")
+neighbours = {
+0: null,
+1: NodePath("../Hexagon"),
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../Stethoscope")
+}
+
+[node name="Triangle" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(69, -11)
+scene = ExtResource("13_4vepe")
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hexagon"),
+5: NodePath("../Stethoscope"),
+6: NodePath("../Heart"),
+7: NodePath("../Diamond"),
+8: null
+}
+
+[node name="Stethoscope" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(69, 53)
+scene = ExtResource("14_4veh4")
+neighbours = {
+0: null,
+1: NodePath("../Triangle"),
+2: NodePath("../Hexagon"),
+3: null,
+4: NodePath("../Good Luck"),
+5: null,
+6: null,
+7: NodePath("../Donut"),
+8: NodePath("../Heart")
+}
+
+[node name="Donut" parent="CenterContainer/RectangleScale2D/LevelSelect" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_qgm14")]
+position = Vector2(5, 53)
+scene = ExtResource("15_2vnsw")
+neighbours = {
+0: null,
+1: NodePath("../Diamond"),
+2: NodePath("../Heart"),
+3: NodePath("../Stethoscope"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/RectangleScale2D/LevelSelect"]

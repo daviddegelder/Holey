@@ -75,6 +75,9 @@ follow_viewport_enabled = true
 
 [node name="LevelSelect2" parent="LevelSelect" instance=ExtResource("2_h2yge")]
 
+[node name="RectangleScale2D" parent="LevelSelect/LevelSelect2/CenterContainer" index="0"]
+scale = Vector2(1.35338, 1.35338)
+
 [node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="1" node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
@@ -120,11 +123,102 @@ neighbours = {
 1: null,
 2: null,
 3: null,
-4: null,
+4: NodePath("../Diamond"),
 5: null,
 6: null,
 7: NodePath("../T-Pose"),
 8: NodePath("../X")
+}
+
+[node name="Diamond" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="5" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: NodePath("../Triangle"),
+4: NodePath("../Heart"),
+5: NodePath("../Donut"),
+6: null,
+7: null,
+8: NodePath("../Snake")
+}
+
+[node name="Hexagon" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="6" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: null,
+5: NodePath("../Good Luck"),
+6: NodePath("../Stethoscope"),
+7: NodePath("../Heart"),
+8: NodePath("../Triangle")
+}
+
+[node name="Heart" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="7" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: NodePath("../Triangle"),
+3: NodePath("../Hexagon"),
+4: NodePath("../Stethoscope"),
+5: null,
+6: NodePath("../Donut"),
+7: null,
+8: NodePath("../Diamond")
+}
+
+[node name="Good Luck" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="8" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: NodePath("../Hexagon"),
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null,
+8: NodePath("../Stethoscope")
+}
+
+[node name="Triangle" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="9" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: null,
+2: null,
+3: null,
+4: NodePath("../Hexagon"),
+5: NodePath("../Stethoscope"),
+6: NodePath("../Heart"),
+7: NodePath("../Diamond"),
+8: null
+}
+
+[node name="Stethoscope" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="10" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: NodePath("../Triangle"),
+2: NodePath("../Hexagon"),
+3: null,
+4: NodePath("../Good Luck"),
+5: null,
+6: null,
+7: NodePath("../Donut"),
+8: NodePath("../Heart")
+}
+
+[node name="Donut" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="11" node_paths=PackedStringArray("neighbours")]
+neighbours = {
+0: null,
+1: NodePath("../Diamond"),
+2: NodePath("../Heart"),
+3: NodePath("../Stethoscope"),
+4: null,
+5: null,
+6: null,
+7: null,
+8: null
 }
 
 [node name="Transition" type="CanvasLayer" parent="."]
