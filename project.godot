@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Holey-Godot"
+config/name="Holey"
+config/description="A minimalistic puzzle game by David de Gelder"
 config/version="2.2.2"
 run/main_scene="uid://c0kxm7ceurpv3"
 config/features=PackedStringArray("4.6")
