@@ -7,13 +7,13 @@
 resource_local_to_scene = true
 size = Vector2(128, 192)
 
-[node name="Triangle" node_paths=PackedStringArray("holes") instance=ExtResource("1_el8by")]
+[node name="Triangle" unique_id=1793208018 node_paths=PackedStringArray("holes") instance=ExtResource("1_el8by")]
 position = Vector2(64, 32)
 shape = SubResource("RectangleShape2D_vw053")
 title = "Triangle"
 holes = [NodePath("Hole3"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8")]
 
-[node name="Hole3" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole3" parent="." index="1" unique_id=317737585 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(-32, -64)
 neighbours = {
 0: null,
@@ -27,7 +27,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole4" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole4" parent="." index="2" unique_id=807333597 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(-32, 0)
 neighbours = {
 0: null,
@@ -41,7 +41,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole5" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole5" parent="." index="3" unique_id=541361804 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(0, -32)
 neighbours = {
 0: null,
@@ -55,7 +55,7 @@ neighbours = {
 8: NodePath("../Hole3")
 }
 
-[node name="Hole6" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole6" parent="." index="4" unique_id=2130687259 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(0, 32)
 neighbours = {
 0: null,
@@ -69,7 +69,7 @@ neighbours = {
 8: NodePath("../Hole4")
 }
 
-[node name="Hole7" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole7" parent="." index="5" unique_id=252581717 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(32, 0)
 neighbours = {
 0: null,
@@ -83,7 +83,7 @@ neighbours = {
 8: NodePath("../Hole5")
 }
 
-[node name="Hole8" parent="." index="6" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
+[node name="Hole8" parent="." index="6" unique_id=378952222 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_pqraf")]
 position = Vector2(-32, 64)
 neighbours = {
 0: null,

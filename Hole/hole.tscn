@@ -8,10 +8,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0jvi"]
 radius = 16.0
 
-[node name="Hole" type="Node2D"]
+[node name="Hole" type="Node2D" unique_id=725430780]
 script = ExtResource("1_y0jvi")
 
-[node name="Render" type="Node2D" parent="."]
+[node name="Render" type="Node2D" parent="." unique_id=1718679487]
 unique_name_in_owner = true
 process_priority = -1
 scale = Vector2(0.16, 0.16)
@@ -23,32 +23,32 @@ fill_steps = 9
 bg_default_color = Color(1, 1, 1, 1)
 bg_complete_color = Color(1, 0.92498, 0.796529, 1)
 
-[node name="Background" type="Node2D" parent="Render"]
+[node name="Background" type="Node2D" parent="Render" unique_id=1082490808]
 unique_name_in_owner = true
 
-[node name="Sprite" type="Sprite2D" parent="Render/Background"]
+[node name="Sprite" type="Sprite2D" parent="Render/Background" unique_id=807047673]
 texture = ExtResource("2_q25xr")
 
-[node name="Fill" type="Node2D" parent="Render"]
+[node name="Fill" type="Node2D" parent="Render" unique_id=608477210]
 unique_name_in_owner = true
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Sprite" type="Sprite2D" parent="Render/Fill"]
+[node name="Sprite" type="Sprite2D" parent="Render/Fill" unique_id=1043253363]
 modulate = Color(1, 0.745098, 0.2, 1)
 texture = ExtResource("2_q25xr")
 script = ExtResource("4_wbotu")
 
-[node name="AutoDetect" type="Area2D" parent="." groups=["Hole"]]
+[node name="AutoDetect" type="Area2D" parent="." unique_id=451446629 groups=["Hole"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoDetect"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoDetect" unique_id=1371669673]
 shape = SubResource("CircleShape2D_y0jvi")
 
-[node name="RayCast2D" type="RayCast2D" parent="AutoDetect"]
+[node name="RayCast2D" type="RayCast2D" parent="AutoDetect" unique_id=2124164932]
 unique_name_in_owner = true
 enabled = false
 target_position = Vector2(32, 0)

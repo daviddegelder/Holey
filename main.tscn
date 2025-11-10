@@ -62,25 +62,22 @@ _data = {
 &"SceneOut": SubResource("Animation_h2yge")
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=346718357]
 script = ExtResource("1_h2yge")
 
-[node name="Puzzle" type="CanvasLayer" parent="."]
+[node name="Puzzle" type="CanvasLayer" parent="." unique_id=1144406050]
 visible = false
 
-[node name="PuzzleUI" parent="Puzzle" instance=ExtResource("1_0xm2m")]
+[node name="PuzzleUI" parent="Puzzle" unique_id=2040077593 instance=ExtResource("1_0xm2m")]
 mouse_filter = 2
 
-[node name="LevelSelect" type="CanvasLayer" parent="."]
+[node name="LevelSelect" type="CanvasLayer" parent="." unique_id=747714399]
 follow_viewport_enabled = true
 
-[node name="LevelSelect2" parent="LevelSelect" instance=ExtResource("2_h2yge")]
+[node name="LevelSelect2" parent="LevelSelect" unique_id=958712560 instance=ExtResource("2_h2yge")]
 mouse_filter = 2
 
-[node name="RectangleScale2D" parent="LevelSelect/LevelSelect2/CenterContainer" index="0"]
-scale = Vector2(1.3533834, 1.3533834)
-
-[node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="1" node_paths=PackedStringArray("neighbours")]
+[node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="1" unique_id=903757942 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -93,7 +90,7 @@ neighbours = {
 8: null
 }
 
-[node name="X" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="2" node_paths=PackedStringArray("neighbours")]
+[node name="X" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="2" unique_id=1384609842 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -106,7 +103,7 @@ neighbours = {
 8: NodePath("../Intro")
 }
 
-[node name="T-Pose" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="3" node_paths=PackedStringArray("neighbours")]
+[node name="T-Pose" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="3" unique_id=22298887 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: NodePath("../Intro"),
@@ -119,7 +116,7 @@ neighbours = {
 8: null
 }
 
-[node name="Snake" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="4" node_paths=PackedStringArray("neighbours")]
+[node name="Snake" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="4" unique_id=1145164512 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -132,7 +129,7 @@ neighbours = {
 8: NodePath("../X")
 }
 
-[node name="Diamond" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="5" node_paths=PackedStringArray("neighbours")]
+[node name="Diamond" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="5" unique_id=256511625 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -145,7 +142,7 @@ neighbours = {
 8: NodePath("../Snake")
 }
 
-[node name="Hexagon" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="6" node_paths=PackedStringArray("neighbours")]
+[node name="Hexagon" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="6" unique_id=2081620427 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -158,7 +155,7 @@ neighbours = {
 8: NodePath("../Triangle")
 }
 
-[node name="Heart" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="7" node_paths=PackedStringArray("neighbours")]
+[node name="Heart" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="7" unique_id=1166482944 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -171,7 +168,7 @@ neighbours = {
 8: NodePath("../Diamond")
 }
 
-[node name="Good Luck" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="8" node_paths=PackedStringArray("neighbours")]
+[node name="Good Luck" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="8" unique_id=1138396138 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: NodePath("../Hexagon"),
@@ -184,7 +181,7 @@ neighbours = {
 8: NodePath("../Stethoscope")
 }
 
-[node name="Triangle" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="9" node_paths=PackedStringArray("neighbours")]
+[node name="Triangle" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="9" unique_id=1294123394 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: null,
@@ -197,7 +194,7 @@ neighbours = {
 8: null
 }
 
-[node name="Stethoscope" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="10" node_paths=PackedStringArray("neighbours")]
+[node name="Stethoscope" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="10" unique_id=1471106120 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: NodePath("../Triangle"),
@@ -210,7 +207,7 @@ neighbours = {
 8: NodePath("../Heart")
 }
 
-[node name="Donut" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" index="11" node_paths=PackedStringArray("neighbours")]
+[node name="Donut" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="11" unique_id=1682628562 node_paths=PackedStringArray("neighbours")]
 neighbours = {
 0: null,
 1: NodePath("../Diamond"),
@@ -223,14 +220,14 @@ neighbours = {
 8: null
 }
 
-[node name="Transition" type="CanvasLayer" parent="."]
+[node name="Transition" type="CanvasLayer" parent="." unique_id=220048582]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=731131225]
 libraries = {
 &"": SubResource("AnimationLibrary_7mycd")
 }
 
-[node name="ColorRect" type="ColorRect" parent="Transition"]
+[node name="ColorRect" type="ColorRect" parent="Transition" unique_id=577907588]
 modulate = Color(1, 0.745098, 0.2, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,7 +237,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_1bvp3")
 
-[node name="FillScreenAnimation" parent="Transition" instance=ExtResource("5_lquwl")]
+[node name="FillScreenAnimation" parent="Transition" unique_id=120415568 instance=ExtResource("5_lquwl")]
 
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="." method="_on_puzzle_ui_puzzle_complete"]
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" method="_on_puzzle_ui_puzzle_complete"]

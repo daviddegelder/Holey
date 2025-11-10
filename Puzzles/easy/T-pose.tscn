@@ -7,13 +7,13 @@
 resource_local_to_scene = true
 size = Vector2(160, 160)
 
-[node name="T-Pose" node_paths=PackedStringArray("holes") instance=ExtResource("1_8bgsx")]
+[node name="T-Pose" unique_id=1223980517 node_paths=PackedStringArray("holes") instance=ExtResource("1_8bgsx")]
 position = Vector2(-16, -16)
 shape = SubResource("RectangleShape2D_hbm8u")
 title = "T-Pose"
 holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole3"), NodePath("Hole4"), NodePath("Hole5")]
 
-[node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
+[node name="Hole" parent="." index="1" unique_id=2014444365 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
 position = Vector2(16, 16)
 neighbours = {
 0: null,
@@ -27,7 +27,7 @@ neighbours = {
 8: NodePath("../Hole2")
 }
 
-[node name="Hole2" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
+[node name="Hole2" parent="." index="2" unique_id=289510800 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
 position = Vector2(-16, -16)
 neighbours = {
 0: null,
@@ -42,7 +42,7 @@ neighbours = {
 }
 fill_level = 5
 
-[node name="Hole3" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
+[node name="Hole3" parent="." index="3" unique_id=190892522 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
 position = Vector2(16, -48)
 neighbours = {
 0: null,
@@ -56,7 +56,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole4" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
+[node name="Hole4" parent="." index="4" unique_id=1850524034 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
 position = Vector2(-48, 16)
 neighbours = {
 0: null,
@@ -70,7 +70,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole5" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
+[node name="Hole5" parent="." index="5" unique_id=1886936242 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_chmiq")]
 position = Vector2(48, 48)
 neighbours = {
 0: null,

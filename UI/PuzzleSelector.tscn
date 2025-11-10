@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dorko01b0mjo1" path="res://Hole/hole.gd" id="1_di0nq"]
 
-[node name="PuzzleSelector" type="Node2D"]
+[node name="PuzzleSelector" type="Node2D" unique_id=1880794976]
 script = ExtResource("1_di0nq")
 metadata/_custom_type_script = "uid://dorko01b0mjo1"

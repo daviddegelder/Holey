@@ -7,13 +7,13 @@
 resource_local_to_scene = true
 size = Vector2(192, 224)
 
-[node name="Stethoscope" node_paths=PackedStringArray("holes") instance=ExtResource("1_lei8g")]
+[node name="Stethoscope" unique_id=1892088294 node_paths=PackedStringArray("holes") instance=ExtResource("1_lei8g")]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_hg37d")
 title = "Stethoscope"
 holes = [NodePath("Hole"), NodePath("Hole2"), NodePath("Hole3"), NodePath("Hole4"), NodePath("Hole5"), NodePath("Hole6"), NodePath("Hole7"), NodePath("Hole8")]
 
-[node name="Hole" parent="." index="1" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole" parent="." index="1" unique_id=2003588617 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(-64, -48)
 neighbours = {
 0: null,
@@ -27,7 +27,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole2" parent="." index="2" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole2" parent="." index="2" unique_id=1658331819 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(-32, -80)
 neighbours = {
 0: null,
@@ -41,7 +41,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole3" parent="." index="3" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole3" parent="." index="3" unique_id=1902950048 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(0, 80)
 neighbours = {
 0: null,
@@ -55,7 +55,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole4" parent="." index="4" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole4" parent="." index="4" unique_id=2055844855 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(32, -80)
 neighbours = {
 0: null,
@@ -69,10 +69,10 @@ neighbours = {
 8: null
 }
 
-[node name="RayCast2D" parent="Hole4/AutoDetect" index="1"]
+[node name="RayCast2D" parent="Hole4/AutoDetect" parent_id_path=PackedInt32Array(2055844855, 451446629) index="1" unique_id=2124164932]
 target_position = Vector2(-45.2548, -45.2548)
 
-[node name="Hole5" parent="." index="5" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole5" parent="." index="5" unique_id=828245402 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(-32, -16)
 neighbours = {
 0: null,
@@ -86,7 +86,7 @@ neighbours = {
 8: NodePath("../Hole")
 }
 
-[node name="Hole6" parent="." index="6" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole6" parent="." index="6" unique_id=1685461971 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(0, 16)
 neighbours = {
 0: null,
@@ -101,7 +101,7 @@ neighbours = {
 }
 fill_level = 8
 
-[node name="Hole7" parent="." index="7" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole7" parent="." index="7" unique_id=1934582026 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(32, -16)
 neighbours = {
 0: null,
@@ -115,7 +115,7 @@ neighbours = {
 8: null
 }
 
-[node name="Hole8" parent="." index="8" node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
+[node name="Hole8" parent="." index="8" unique_id=113373229 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_4no70")]
 position = Vector2(64, -48)
 neighbours = {
 0: null,
