@@ -33,15 +33,22 @@ const DIRECTION_VECTORS: Dictionary[Direction, Vector2] = {
 var has_flowed: bool = false
 
 var active = true
+var preview_direction: Direction
 
 func _process(_delta):	
 	if not Engine.is_editor_hint():
-		var input_direction: Direction = get_input_direction()
-		if input_direction != Direction.Null:
-			flow(input_direction)
 		%Render.fill_level = fill_level
+		preview_input(preview_direction)
 	else:
 		render_editor()
+		
+func _input(event):
+	preview_direction = Direction.Null
+	if event is InputEvent8Directional:
+		if event.pressed:
+			preview_direction = event.direction
+		else:
+			flow(event.direction)
 	
 func flow(direction: Direction):
 	if fill_level > 0 and has_neighbour(direction):
@@ -55,25 +62,12 @@ func fill():
 
 func get_input_direction():
 	if !active: return Direction.Null
-	
-	if Input.is_action_just_pressed("North"):
-		return Direction.North
-	if Input.is_action_just_pressed("NorthEast"):
-		return Direction.NorthEast
-	if Input.is_action_just_pressed("East"):
-		return Direction.East
-	if Input.is_action_just_pressed("SouthEast"):
-		return Direction.SouthEast
-	if Input.is_action_just_pressed("South"):
-		return Direction.South
-	if Input.is_action_just_pressed("SouthWest"):
-		return Direction.SouthWest
-	if Input.is_action_just_pressed("West"):
-		return Direction.West
-	if Input.is_action_just_pressed("NorthWest"):
-		return Direction.NorthWest
 	#no input:
 	return Direction.Null
+	
+func preview_input(direction: Direction):
+	#temporary preview visualisation
+	%Fill.position = DIRECTION_VECTORS[direction] * 10
 
 func has_neighbour(direction: Direction):
 	return neighbours[direction] != null
