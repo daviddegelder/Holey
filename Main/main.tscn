@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://c0kxm7ceurpv3"]
 
-[ext_resource type="PackedScene" uid="uid://6kyh0plkcy8e" path="res://UI/ui.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://bthmtsoy1lrrr" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://crpaljc720oiq" path="res://UI/level_select.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://b0fk7gknspfpr" path="res://Systems/dynamic_color.gd" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c3j8tak0ogyf5" path="res://UI/fill_screen_animation.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://bthmtsoy1lrrr" path="res://Main/main.gd" id="1_k3v36"]
+[ext_resource type="PackedScene" uid="uid://6kyh0plkcy8e" path="res://UI/ui.tscn" id="2_liyct"]
+[ext_resource type="PackedScene" uid="uid://crpaljc720oiq" path="res://UI/level_select.tscn" id="3_ib3t1"]
+[ext_resource type="Script" uid="uid://b0fk7gknspfpr" path="res://Systems/dynamic_color.gd" id="4_f6fdm"]
+[ext_resource type="PackedScene" uid="uid://c3j8tak0ogyf5" path="res://UI/fill_screen_animation.tscn" id="5_rj11h"]
 
 [sub_resource type="Animation" id="Animation_1bvp3"]
 length = 0.001
@@ -63,18 +63,18 @@ _data = {
 }
 
 [node name="Main" type="Node" unique_id=346718357]
-script = ExtResource("1_h2yge")
+script = ExtResource("1_k3v36")
 
 [node name="Puzzle" type="CanvasLayer" parent="." unique_id=1144406050]
 visible = false
 
-[node name="PuzzleUI" parent="Puzzle" unique_id=2040077593 instance=ExtResource("1_0xm2m")]
+[node name="PuzzleUI" parent="Puzzle" unique_id=2040077593 instance=ExtResource("2_liyct")]
 mouse_filter = 2
 
 [node name="LevelSelect" type="CanvasLayer" parent="." unique_id=747714399]
 follow_viewport_enabled = true
 
-[node name="LevelSelect2" parent="LevelSelect" unique_id=958712560 instance=ExtResource("2_h2yge")]
+[node name="LevelSelect2" parent="LevelSelect" unique_id=958712560 instance=ExtResource("3_ib3t1")]
 mouse_filter = 2
 
 [node name="Intro" parent="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" parent_id_path=PackedInt32Array(958712560, 2114341605) index="1" unique_id=903757942 node_paths=PackedStringArray("neighbours")]
@@ -235,9 +235,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("4_1bvp3")
+script = ExtResource("4_f6fdm")
 
-[node name="FillScreenAnimation" parent="Transition" unique_id=120415568 instance=ExtResource("5_lquwl")]
+[node name="FillScreenAnimation" parent="Transition" unique_id=120415568 instance=ExtResource("5_rj11h")]
 
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="." method="_on_puzzle_ui_puzzle_complete"]
 [connection signal="puzzle_complete" from="Puzzle/PuzzleUI" to="LevelSelect/LevelSelect2/CenterContainer/RectangleScale2D/LevelSelect" method="_on_puzzle_ui_puzzle_complete"]

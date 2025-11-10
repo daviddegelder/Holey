@@ -19,6 +19,10 @@ boot_splash/stretch_mode=0
 boot_splash/image="uid://cepwlqrbt5g4t"
 config/icon="uid://cvdgn1pjcy35j"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
 [autoload]
 
 GlobalInput="*res://Systems/input.gd"
