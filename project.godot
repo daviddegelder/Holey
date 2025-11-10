@@ -13,9 +13,9 @@ config_version=5
 config/name="Holey-Godot"
 config/version="2.2.2"
 run/main_scene="uid://c0kxm7ceurpv3"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.6")
 boot_splash/bg_color=Color(0.85098, 0.858824, 0.905882, 1)
-boot_splash/fullsize=false
+boot_splash/stretch_mode=0
 boot_splash/image="uid://cepwlqrbt5g4t"
 config/icon="uid://cvdgn1pjcy35j"
 
